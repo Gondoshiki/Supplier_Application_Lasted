@@ -44,7 +44,7 @@ namespace SupplierRegistration
                 string CC = null;
                 string VendorName = Vendor_Name.Value;
                 string PIC = Vendor_PIC.Value;
-                string Mail = Email.Value;
+                string Mail = Email.Value.Trim();
                 string CreateBy = Request.Cookies.Get("EmployeeId").Value;
                 string logonEmail = Request.Cookies.Get("Email").Value;
                 string AppID = null;
@@ -222,8 +222,8 @@ namespace SupplierRegistration
                                 string[] words = null;
                                 string oMail = null;
                                 string[] checkMailFormat = null;
-                                string GM = GM_Email.Value;
-                                bool boolGMCheck = CheckEmailFormat(GM);
+                                string GM = GM_Email.Value.Trim();
+                                bool boolGMCheck = CheckEmailFormat(GM.Trim());
                                 bool boolMail = false;
                                 bool boolCheckMail = true;
                                 words = Mail.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
@@ -245,7 +245,7 @@ namespace SupplierRegistration
                                             {
                                                 if (mail != "")
                                                 {
-                                                    boolMail = CheckEmailFormat(mail); //CheckFormatEmail#2
+                                                    boolMail = CheckEmailFormat(mail.Trim()); //CheckFormatEmail#2
                                                                                        //Set Email format
                                                     if (boolMail == true) //True Format
                                                     {
@@ -369,7 +369,7 @@ namespace SupplierRegistration
             SqlDataAdapter oDa;
             string VendorName = Vendor_Name.Value;
             string PIC = Vendor_PIC.Value;
-            string Mail = Email.Value;
+            string Mail = Email.Value.Trim();
             string CreateBy = Request.Cookies.Get("EmployeeId").Value;
             //Get AppID
             string AppID = null;
@@ -540,8 +540,8 @@ namespace SupplierRegistration
                             string[] words = null;
                             string oMail = null;
                             string[] checkMailFormat = null;
-                            string GM = GM_Email.Value;
-                            bool boolGMCheck = CheckEmailFormat(GM);
+                            string GM = GM_Email.Value.Trim();
+                            bool boolGMCheck = CheckEmailFormat(GM.Trim());
                             bool boolMail = false;
                             bool boolCheckMail = true;
                             //CheckFormatEmail#1
@@ -563,7 +563,7 @@ namespace SupplierRegistration
                                         {
                                             if (mail != "")
                                             {
-                                                boolMail = CheckEmailFormat(mail); //CheckFormatEmail#2
+                                                boolMail = CheckEmailFormat(mail.Trim()); //CheckFormatEmail#2
                                                                                    //Set Email format
                                                 if (boolMail == true) //True Format
                                                 {

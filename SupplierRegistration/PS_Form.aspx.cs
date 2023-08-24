@@ -275,7 +275,7 @@ namespace SupplierRegistration
             string monthstamp = DateTime.Now.ToString("MM");
             string runningNo = null;
             string CC = null;
-            bool boolGmMail = CheckEmailFormat(GmMail);
+            bool boolGmMail = CheckEmailFormat(GmMail.Trim());
             bool boolMail = false; //check for set new email format
             bool boolCheckMail = true; //for check email format
 
@@ -398,7 +398,7 @@ namespace SupplierRegistration
                         {
                             if (mail != "")
                             {
-                                boolMail = CheckEmailFormat(mail);
+                                boolMail = CheckEmailFormat(mail.Trim());
                                 //Set Email format
                                 if (boolMail == true)
                                 {
@@ -537,7 +537,7 @@ namespace SupplierRegistration
             string monthstamp = DateTime.Now.ToString("MM");
             string runningNo = null;
             string CC = null;
-            bool boolGmMail = CheckEmailFormat(GmMail);
+            bool boolGmMail = CheckEmailFormat(GmMail.Trim());
             bool boolMail = false;
             bool boolCheckMail = true;
 
@@ -634,7 +634,7 @@ namespace SupplierRegistration
             {
                 if (arrMail[i] != "")
                 {
-                    boolMail = CheckEmailFormat(arrMail[i].Replace(" ", ""));
+                    boolMail = CheckEmailFormat(arrMail[i].Trim());
                     if (boolMail == false)
                     {
                         boolCheckMail = false;
@@ -646,7 +646,7 @@ namespace SupplierRegistration
                         {
                             if (mail != "")
                             {
-                                boolMail = CheckEmailFormat(mail);
+                                boolMail = CheckEmailFormat(mail.Trim());
                                 //Set Email format
                                 if (boolMail == true)
                                 {

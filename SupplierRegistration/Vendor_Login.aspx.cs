@@ -1247,6 +1247,7 @@ namespace SupplierRegistration
             string BodyMail;
             string Header;
 
+
             //string emailTo = "Prompiriya_S@hinothailand.com";
             string link = "https://hinommt.com/SupplierApplication/PS_Detail.aspx?id=" + AppID + "&RecCode=1";
             String Body = "<img src=\"https://career.hinothailand.com/Career/Images/companylogo.png\" style=\"width:125px; height:125px;\" /> ";

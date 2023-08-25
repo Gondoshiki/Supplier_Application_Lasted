@@ -12,6 +12,7 @@
         beforeSend: function (data) {
         },
         success: function (server) {
+            console.log(server)
             var dt = JSON.parse(JSON.stringify(server))
             //Command Table
             //tbFile.style.width = "100%";

@@ -49,6 +49,18 @@
 <body id="page-top">
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <script>
+            function oFileUploaded(type, title, text, Id) {
+                swal.fire({
+                    icon: type,
+                    title: title,
+                    text: text,
+                    timer: 5000
+                }).then(function () {
+                    /* window.location.href = "Vendor_login.aspx?id=" + Id */
+                });
+            }
+        </script>
         <!----- Loader ------------>
         <div class="loader"></div>
         
@@ -415,7 +427,7 @@
                                     <%--<h5>File list</h5>--%>
                                     <%--Data Table--%>
 
-                                    <table id="tbFileJ" class="table table-hover bg-light" style="width: 100%;">
+                                    <table id="FileReject" class="table table-hover bg-light" style="width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th>File list</th>

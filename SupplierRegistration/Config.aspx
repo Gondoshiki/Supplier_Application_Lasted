@@ -10,7 +10,6 @@
 <script src="Scripts/ShowLoading.js"></script>
 </asp:Content>
 <asp:Content ID="LogBody" ContentPlaceHolderID="Body" runat="server">
-
     <!----- Loader ------------>
     <div class="loader"></div>
 
@@ -40,7 +39,7 @@
                         <label for="system-name" class="col-form-label">File:</label>
                         <asp:RequiredFieldValidator ID="FileUpload_Validate" runat="server" ControlToValidate="fileUpload" ErrorMessage="* Please fill in the fields." ForeColor="#ff0000" ValidationGroup="upload" SetFocusOnError="true"></asp:RequiredFieldValidator>
                         <div class="input-group">
-                            <input type="file" class="form-control" id="fileUpload" runat="server">
+                            <input type="file" class="form-control" onchange="checkFile()" id="fileUpload" runat="server">
                         </div>
                     </div>
                 </div>
@@ -180,11 +179,8 @@
                 </div>
             </div>
         </div>
-        <script src="Model/FileTable.js">
-        </script>
     
         <%--       <script src="Model/FileTable.js"></script>--%>
-
         <div class="card shadow mb-4 border-left-secondary">
             <div class="card-header">
                 <h5 class="font-weight-bold"><i class="bi bi-shield-lock"></i>Authorization</h5>
@@ -213,8 +209,9 @@
                 </div>
             </div>
         </div>
-        <script src="Model/UserTable.js"></script>
     </div>
+    <script src="Model/FileTable.js"></script>
+    <script src="Model/UserTable.js"></script>
     <script src="Scripts/PS/Config/Alert_Config.js"></script>
     <script src="Scripts/PS/Config/POST_Config.js"></script>
 </asp:Content>

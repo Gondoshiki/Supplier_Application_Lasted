@@ -4261,6 +4261,7 @@
     <Content Include="Scripts\PS\Manual\Manual_Link.js" />
     <Content Include="Scripts\PS\Register\Alert_PS_Register.js" />
     <Content Include="Scripts\PS\Register\POST_PS_Register.js" />
+    <Content Include="Scripts\PS\Revise\Alert_PS_Revise.js" />
     <Content Include="Scripts\PS\Revise\POST_PS_Revise.js" />
     <Content Include="Scripts\Vendor\Login\Alert_Vendor_Login.js" />
     <Content Include="Scripts\Vendor\Login\Get_Vendor_Login.js" />

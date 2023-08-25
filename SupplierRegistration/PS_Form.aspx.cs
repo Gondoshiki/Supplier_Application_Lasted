@@ -204,11 +204,11 @@ namespace SupplierRegistration
                     }
 
                 }
-                string MailTo = emailTo.Replace(" ", "");
+                string MailTo = emailTo.Replace(",", ";");
 
                 foreach (var email in MailTo.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))
                 {
-                    myMail.To.Add(new MailAddress(email));
+                    myMail.To.Add(new MailAddress(email.Trim()));
                 }
 
                 //if (myMail.To.Count == emailTo.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries).Count())
@@ -264,7 +264,7 @@ namespace SupplierRegistration
             string PIC = Vendor_PIC.Value;
             string Mail = Email.Value.Trim();
             string GmMail = GM_Email.Value.Trim();
-            string[] arrMail = Mail.Split(';');
+            string[] arrMail = Mail.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             string[] checkMailFormat = null;
             string[] arrGmMail = Mail.Split(' ');
             string oMail = null;
@@ -289,6 +289,10 @@ namespace SupplierRegistration
             string oName = null;
             string[] name2 = null;
             names = PIC.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            string lastarrnames = null;
+            string lastarrname2 = null;
+            string lastarremail = null;
+            lastarrnames = names[names.Length - 1];
             //Check vendor PIC format
             for (int i = 0; i < names.Length; i++)
             {
@@ -298,7 +302,7 @@ namespace SupplierRegistration
 
                     name2 = names[i].Trim().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
                     //int countname = name2.Count();
-
+                    lastarrname2 = names[names.Length - 1];
                     if (name2.Length == 1)
                     {
                         if (names[i] != "")
@@ -312,7 +316,15 @@ namespace SupplierRegistration
                                 {
                                     if (names[i].Trim().Contains(",") == false)
                                     {
-                                        oName = oName + names[i].Trim() + ",";
+                                        if (names[i] == lastarrname2)
+                                        {
+                                            oName = oName + names[i].Trim();
+                                        }
+                                        else
+                                        {
+                                            oName = oName + names[i].Trim() + ", ";
+                                        }
+                                        
                                     }
 
                                 }
@@ -350,7 +362,15 @@ namespace SupplierRegistration
                                 {
                                     if (names[i].Trim().Contains(",") == false)
                                     {
-                                        oName = oName + names[i].Trim() + ",";
+                                        if (names[i] == lastarrnames)
+                                        {
+                                            oName = oName + names[i].Trim();
+                                        }
+                                        else
+                                        {
+                                            oName = oName + names[i].Trim() + ", ";
+                                        }
+                                        
                                     }
                                 }
                                 else if (names.Length == 1)
@@ -386,6 +406,7 @@ namespace SupplierRegistration
                 if (arrMail[i] != "")
                 {
                     boolMail = CheckEmailFormat(arrMail[i].Trim());
+                    lastarremail = arrMail[arrMail.Length - 1];
                     if (boolMail == false)
                     {
                         boolCheckMail = false;
@@ -402,9 +423,17 @@ namespace SupplierRegistration
                                 //Set Email format
                                 if (boolMail == true)
                                 {
-                                    if (arrMail[i].Contains(";") == false)
+                                    if (arrMail[i].Contains(",") == false)
                                     {
-                                        oMail = oMail + arrMail[i].Trim() + ";";
+                                        if (arrMail[i] == lastarremail)
+                                        {
+                                            oMail = oMail + arrMail[i].Trim();
+                                        }
+                                        else
+                                        {
+                                            oMail = oMail + arrMail[i].Trim() + ", ";
+                                        }
+                                        
                                     }
                                     else
                                     {
@@ -526,7 +555,7 @@ namespace SupplierRegistration
             string PIC = Vendor_PIC.Value;
             string Mail = Email.Value.Trim();
             string GmMail = GM_Email.Value.Trim();
-            string[] arrMail = Mail.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] arrMail = Mail.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             string[] checkMailFormat = null;
             string[] arrGmMail = Mail.Split(' ');
             string oMail = null;
@@ -546,8 +575,14 @@ namespace SupplierRegistration
             bool boolCheckVendor = CheckVendorName(VendorName);
             string[] names = null;
             string oName = null;
+            
             string[] name2 = null;
             names = PIC.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            string lastarrnames = null;
+            string lastarrname2 = null;
+            string lastarremail = null;
+            lastarrnames = names[names.Length - 1];
+            
             //Check vendor PIC format
             for (int i = 0; i < names.Length; i++)
             {
@@ -557,7 +592,7 @@ namespace SupplierRegistration
 
                     name2 = names[i].Trim().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
                     //int countname = name2.Count();
-
+                    lastarrname2 = names[names.Length - 1];
                     if (name2.Length == 1)
                     {
                         if (names[i] != "")
@@ -571,7 +606,15 @@ namespace SupplierRegistration
                                 {
                                     if (names[i].Trim().Contains(",") == false)
                                     {
-                                        oName = oName + names[i].Trim() + ",";
+                                        if (names[i] == lastarrname2)
+                                        {
+                                            oName = oName + names[i].Trim();
+                                        }
+                                        else
+                                        {
+                                            oName = oName + names[i].Trim() + ", ";
+                                        }
+                                        
                                     }
 
                                 }
@@ -601,7 +644,14 @@ namespace SupplierRegistration
                                 {
                                     if (names[i].Trim().Contains(",") == false)
                                     {
-                                        oName = oName + names[i].Trim() + ",";
+                                        if (names[i] == lastarrnames)
+                                        {
+                                            oName = oName + names[i].Trim();
+                                        }
+                                        else
+                                        {
+                                            oName = oName + names[i].Trim() + ", ";
+                                        }
                                     }
                                 }
                                 else if (names.Length == 1)
@@ -634,6 +684,7 @@ namespace SupplierRegistration
             {
                 if (arrMail[i] != "")
                 {
+                    lastarremail = arrMail[arrMail.Length - 1];
                     boolMail = CheckEmailFormat(arrMail[i].Trim());
                     if (boolMail == false)
                     {
@@ -650,9 +701,16 @@ namespace SupplierRegistration
                                 //Set Email format
                                 if (boolMail == true)
                                 {
-                                    if (arrMail[i].Contains(";") == false)
+                                    if (arrMail[i].Contains(",") == false)
                                     {
-                                        oMail = oMail + arrMail[i].Trim() + ";";
+                                        if (arrMail[i] == lastarremail)
+                                        {
+                                            oMail = oMail + arrMail[i].Trim();
+                                        }
+                                        else
+                                        {
+                                            oMail = oMail + arrMail[i].Trim() + ", ";
+                                        }
                                     }
                                     else
                                     {

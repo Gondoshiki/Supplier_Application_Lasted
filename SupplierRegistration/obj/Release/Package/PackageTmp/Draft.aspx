@@ -139,7 +139,11 @@
                     <label for="InputPIC" class="form-label">Vendor PIC</label>
                     <asp:RequiredFieldValidator ID="RequiredVendor_PIC" runat="server" ControlToValidate="Vendor_PIC" ErrorMessage="*" ForeColor="#ff0000" ValidationGroup="Import" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     <input type="text" class="form-control" id="Vendor_PIC" runat="server" aria-describedby="VendorPIC" placeholder="Please enter your name.">
-                    <p style="color: red"><small>*กรณีที่มีชื่อมากกว่า 1 ให้ใส่เครื่องหมาย , หลังชื่อทุกครั้ง เช่น สมชาย มั่งมี, บุญมา บุญมี , เป็นต้น</small></p>
+                    <div class="alert alert-warning" style="margin-top: 10px">
+                        <strong><i class="fas fa-exclamation-triangle"></i></strong>
+                        กรณีที่มีชื่อมากกว่า 1 ให้ใส่เครื่องหมาย , หลังชื่อทุกครั้ง เช่น สมชาย มั่งมี, บุญมา บุญมี , เป็นต้น                        
+                        <br \>                   
+                    </div>
 
                 </div>
 
@@ -147,7 +151,11 @@
                     <label for="InputEmail" class="form-label">Email</label>
                     <asp:RequiredFieldValidator ID="RequiredEmail" runat="server" ControlToValidate="Email" ErrorMessage="*" ForeColor="#ff0000" ValidationGroup="Import" SetFocusOnError="true"></asp:RequiredFieldValidator>
                     <input type="text" class="form-control" id="Email" runat="server" placeholder="Please enter your email.">
-                    <p style="color: red"><small>*กรณีที่มี E-mail มากกว่า 1 ให้ใส่เครื่องหมาย ; หลัง E-mail ทุกครั้ง เช่น Test@hotmail.com; Done@gmail.com; เป็นต้น</small></p>
+                    <div class="alert alert-warning" style="margin-top: 10px">
+                        <strong><i class="fas fa-exclamation-triangle"></i></strong>
+                        กรณีที่มี E-mail มากกว่า 1 ให้ใส่เครื่องหมาย , หลัง E-mail ทุกครั้ง เช่น Test@hotmail.com, Test2@gmail.com เป็นต้น                      
+                        <br \>                   
+                    </div>
                 </div>
 
                 <div class="mb-3">

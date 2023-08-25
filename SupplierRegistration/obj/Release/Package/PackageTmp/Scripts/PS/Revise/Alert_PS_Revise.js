@@ -1,5 +1,4 @@
 ﻿function checkFile(fileupload) {
-    console.log(fileupload.val);
     var fileEditApp = null;
     switch (fileupload) {
         case 'File1':
@@ -84,19 +83,4 @@
 
     }
     // Log array in the console
-}
-function oFileUploaded(type, title, text, id) {
-    swal.fire({
-        icon: type,
-        title: title,
-        text: text,
-        timer: 5000
-    }).then(function () {
-        window.location.href = "PS_Detail.aspx?id=" + id
-    });
-}
-function SearchClick(valid) {
-
-
-
 }

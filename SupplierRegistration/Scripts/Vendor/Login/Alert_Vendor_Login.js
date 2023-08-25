@@ -26,13 +26,14 @@ function checkFile(fileupload) {
     var id = null;
     var id = searchParams.get('id');
     var fileInput = fileupload.files;
+    console.log(fileupload.val);
     // Create empty inputValues array
     // Loop through input fields
     var inpFileApp = document.getElementById("inpFileApp");
     var lbFileApp = document.getElementById("lbFileApp");
     /*var src = window.URL.createObjectURL(fileupload.target.files)*/
-    var path = URL.createObjectURL(fileupload.files[0]);
-    var reader = new FileReader();
+    //var path = URL.createObjectURL(fileupload.files[0]);
+    //var reader = new FileReader();
     //reader.readAsDataURL(fileupload.files[0]);
     for (let i = 0; i < fileInput.length; i++) {
         // Push values of each input field into an array

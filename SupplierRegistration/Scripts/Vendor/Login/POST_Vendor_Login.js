@@ -17,7 +17,7 @@
                     //"drawCallback": function () {
                     //    $("#tbFile thead").remove();
                     //},
-                    //"bDestroy": true,                    
+                    "bDestroy": true,                    
                     columns: [
                         { data: 'Title' },
                         { data: 'Source' },

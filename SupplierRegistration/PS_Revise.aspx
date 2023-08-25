@@ -98,14 +98,13 @@
         <div class="card shadow border-left-warning mb-3" id="UploadBar" style="display: none">
             <div class="card-body">
                 <div class="text-center">
-                    <i class="fa-solid fa-circle-exclamation fa-2xl" style="color: #e47d07;"></i>
+                    <i class="fa-solid fa-triangle-exclamation fa-2xl text-warning mb-2" style="width: 50px; height:50px"></i>
                     <h3>File Uploaded</h3>
                     <button class="btn btn-primary btn-icon-split " type="button" data-toggle="collapse" data-target="#collapseTable12" aria-expanded="false" aria-controls="collapseTable12">
                         <span class="icon text-white-50"><i class="fa-solid fa-magnifying-glass"></i></span>
                         <span class="text">Show Files Upload</span>
                     </button>
-                    <div class="collapse" id="collapseTable12">
-                        <h5>File list</h5>
+                    <div class="collapse" id="collapseTable12">                        
                         <%--Data Table--%>
                         <table id="ReviseTable" class="table table-hover bg-light text-left table-bordered" style="width: 100%;">
                             <thead>

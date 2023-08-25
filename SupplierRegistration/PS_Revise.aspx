@@ -352,13 +352,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
     <div class="container-fluid animated--grow-in">
         <div class="card shadow mb-4 border-left-warning">
             <div class="card-header py-3">

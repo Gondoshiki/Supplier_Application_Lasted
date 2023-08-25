@@ -361,7 +361,7 @@ namespace SupplierRegistration
                                 ofilesSME.Title = "<p>SMEs Research :</p>";
                                 ofilesSME.FileName = PathName;
                                 ofilesSME.Source = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/SMEs_Research/" + Uri.EscapeUriString(PathName) + "' target='_blank'>" + Path.GetFileName(fileSME[0]) + "</a>";
-                                ofilesSME.Source1 += "<input type='file' id='inpSME_temp' onchange='checkFile(inpAppForm_temp)' class='form-control' runat='server' />";
+                                ofilesSME.Source1 += "<input type='file' id='inpSME_temp' onchange='checkFile(inpSME_temp)' class='form-control' runat='server' />";
                                 oFileList.Add(ofilesSME);
                             }
                         }
@@ -375,7 +375,7 @@ namespace SupplierRegistration
                                 ofilesRegisCert.Title = "<p>หนังสือรับรอง :</p>";
                                 ofilesRegisCert.FileName = PathName;
                                 ofilesRegisCert.Source = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/Registration_Certificate/" + Uri.EscapeUriString(PathName) + "' target='_blank'>" + Path.GetFileName(fileRegisCert[0]) + "</a>";
-                                ofilesRegisCert.Source1 += "<input type='file' id='inpRegisCert_temp' onchange='checkFile(inpAppForm_temp)' class='form-control' runat='server' />";
+                                ofilesRegisCert.Source1 += "<input type='file' id='inpRegisCert_temp' onchange='checkFile(inpRegisCert_temp)' class='form-control' runat='server' />";
                                 oFileList.Add(ofilesRegisCert);
                             }
                         }
@@ -389,7 +389,7 @@ namespace SupplierRegistration
                                 ofilesPP20.Title = "<p>ภพ.20 :</p>";
                                 ofilesPP20.FileName = PathName;
                                 ofilesPP20.Source = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/PP20/" + Uri.EscapeUriString(PathName) + "' target='_blank'>" + Path.GetFileName(filePP20[0]) + "</a>";
-                                ofilesPP20.Source1 += "<input type='file' id='inpPP20_temp' onchange='checkFile(inpAppForm_temp)' class='form-control' runat='server' />";
+                                ofilesPP20.Source1 += "<input type='file' id='inpPP20_temp' onchange='checkFile(inpPP20_temp)' class='form-control' runat='server' />";
                                 oFileList.Add(ofilesPP20);
                             }
                         }
@@ -403,7 +403,7 @@ namespace SupplierRegistration
                                 ofilesBookBank.Title = "<p>Book Bank :</p>";
                                 ofilesBookBank.FileName = PathName;
                                 ofilesBookBank.Source = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/Book-Bank/" + Uri.EscapeUriString(PathName) + "' target='_blank'>" + Path.GetFileName(fileBookBank[0]) + "</a>";
-                                ofilesBookBank.Source1 += "<input type='file' id='inpBookBank_temp' onchange='checkFile(inpAppForm_temp)' class='form-control' runat='server' />";
+                                ofilesBookBank.Source1 += "<input type='file' id='inpBookBank_temp' onchange='checkFile(inpBookBank_temp)' class='form-control' runat='server' />";
                                 oFileList.Add(ofilesBookBank);
                             }
                         }
@@ -417,7 +417,7 @@ namespace SupplierRegistration
                                 ofilesBOJ5.Title = "<p>บอจ.5 :</p>";
                                 ofilesBOJ5.FileName = PathName;
                                 ofilesBOJ5.Source = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/BOJ5/" + Uri.EscapeUriString(PathName) + "' target='_blank'>" + Path.GetFileName(fileBOJ5[0]) + "</a>";
-                                ofilesBOJ5.Source1 += "<input type='file' id='inpBOJ5_temp' onchange='checkFile(inpAppForm_temp)' class='form-control' runat='server' />";
+                                ofilesBOJ5.Source1 += "<input type='file' id='inpBOJ5_temp' onchange='checkFile(inpBOJ5_temp)' class='form-control' runat='server' />";
                                 oFileList.Add(ofilesBOJ5);
                             }
                         }
@@ -431,7 +431,7 @@ namespace SupplierRegistration
                                 ofilesOrgCompany.Title = "<p>Organization Company :</p>";
                                 ofilesOrgCompany.FileName = PathName;
                                 ofilesOrgCompany.Source = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/Organization_Company/" + Uri.EscapeUriString(PathName) + "' target='_blank'>" + Path.GetFileName(fileOrgCompany[0]) + "</a>";
-                                ofilesOrgCompany.Source1 += "<input type='file' id='inpOrgCompany_temp' onchange='checkFile(inpAppForm_temp)' class='form-control' runat='server' />";
+                                ofilesOrgCompany.Source1 += "<input type='file' id='inpOrgCompany_temp' onchange='checkFile(inpOrgCompany_temp)' class='form-control' runat='server' />";
                                 oFileList.Add(ofilesOrgCompany);
                             }
                         }
@@ -445,7 +445,7 @@ namespace SupplierRegistration
                                 ofilesSPS10.Title = "<p>สปส1-10 :</p>";
                                 ofilesSPS10.FileName = PathName;
                                 ofilesSPS10.Source = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/SPS1-10/" + Uri.EscapeUriString(PathName) + "' target='_blank'>" + Path.GetFileName(fileSPS10[0]) + "</a>";
-                                ofilesSPS10.Source1 += "<input type='file' id='inpSPS10_temp' onchange='checkFile(inpAppForm_temp)' class='form-control' runat='server' />";
+                                ofilesSPS10.Source1 += "<input type='file' id='inpSPS10_temp' onchange='checkFile(inpSPS10_temp)' class='form-control' runat='server' />";
                                 oFileList.Add(ofilesSPS10);
                             }
                         }

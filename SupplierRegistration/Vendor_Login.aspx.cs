@@ -1264,17 +1264,17 @@ namespace SupplierRegistration
 
                 if (emailTo != "")
                 {
-                    if (emailTo.Contains(";"))
+                    if (emailTo.Contains(","))
                     {
-                        string MailTo = emailTo.Replace(" ", "");
-                        foreach (var email in MailTo.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))
+                        string MailTo = emailTo.Replace(",", ";");
+                        foreach (var email in MailTo.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries))
                         {
-                            myMail.To.Add(new MailAddress(email));
+                            myMail.To.Add(new MailAddress(email.Trim()));
                         }
                     }
                     else
                     {
-                        myMail.To.Add(new MailAddress(emailTo));
+                        myMail.To.Add(new MailAddress(emailTo.Trim()));
                     }
                 }
 

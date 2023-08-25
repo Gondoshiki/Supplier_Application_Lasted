@@ -126,6 +126,10 @@ namespace SupplierRegistration
                                 string name1 = null;
                                 string[] name2 = null;
                                 names = PIC.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                                string lastarrnames = null;
+                                string lastarrname2 = null;
+                                
+                                lastarrnames = names[names.Length - 1];
                                 //Check vendor PIC format
                                 for (int i = 0; i < names.Length; i++)
                                 {
@@ -149,7 +153,15 @@ namespace SupplierRegistration
                                                     {
                                                         if (names[i].Trim().Contains(",") == false)
                                                         {
-                                                            oName = oName + names[i].Trim() + ",";
+                                                            if (names[i] == lastarrnames)
+                                                            {
+                                                                oName = oName + names[i].Trim();
+                                                            }
+                                                            else
+                                                            {
+                                                                oName = oName + names[i].Trim() + ", ";
+                                                            }
+                                                            
                                                         }
 
                                                     }
@@ -185,9 +197,18 @@ namespace SupplierRegistration
                                                 {
                                                     if (names.Length != 1)
                                                     {
+                                                        lastarrname2 = names[names.Length - 1];
                                                         if (names[i].Trim().Contains(",") == false)
                                                         {
-                                                            oName = oName + names[i].Trim() + ",";
+                                                            if (names[i] == lastarrname2)
+                                                            {
+                                                                oName = oName + names[i].Trim();
+                                                            }
+                                                            else
+                                                            {
+                                                                oName = oName + names[i].Trim() + ",";
+                                                            }
+                                                            
                                                         }
                                                     }
                                                     else if (names.Length == 1)
@@ -226,7 +247,8 @@ namespace SupplierRegistration
                                 bool boolGMCheck = CheckEmailFormat(GM.Trim());
                                 bool boolMail = false;
                                 bool boolCheckMail = true;
-                                words = Mail.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
+                                words = Mail.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                                string lastarremail = null;
                                 //CheckFormatEmail#1
                                 for (int i = 0; i < words.Length; i++)
                                 {
@@ -245,14 +267,23 @@ namespace SupplierRegistration
                                             {
                                                 if (mail != "")
                                                 {
+                                                    lastarremail = words[words.Length - 1];
                                                     boolMail = CheckEmailFormat(mail.Trim()); //CheckFormatEmail#2
                                                                                        //Set Email format
                                                     if (boolMail == true) //True Format
                                                     {
                                                         string fwords = words[i].Trim();
-                                                        if (fwords.Contains(";") == false)
+                                                        if (words[i].Contains(",") == false)
                                                         {
-                                                            oMail = oMail + words[i].Trim() + ";";
+                                                            if (words[i] == lastarremail)
+                                                            {
+                                                                oMail = oMail + words[i].Trim();
+                                                            }
+                                                            else
+                                                            {
+                                                                oMail = oMail + words[i].Trim() + ", ";
+                                                            }
+                                                            
                                                         }
                                                         else
                                                         {
@@ -451,6 +482,10 @@ namespace SupplierRegistration
                             string name1 = null;
                             string[] name2 = null;
                             names = PIC.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                            string lastarrnames = null;
+                            string lastarrname2 = null;
+                            
+                            lastarrnames = names[names.Length - 1];
                             //Check vendor PIC format
                             for (int i = 0; i < names.Length; i++)
                             {
@@ -474,7 +509,15 @@ namespace SupplierRegistration
                                                 {
                                                     if (names[i].Trim().Contains(",") == false)
                                                     {
-                                                        oName = oName + names[i].Trim() + ",";
+                                                        if (names[i] == lastarrnames)
+                                                        {
+                                                            oName = oName + names[i].Trim();
+                                                        }
+                                                        else
+                                                        {
+                                                            oName = oName + names[i].Trim() + ", ";
+                                                        }
+                                                        
                                                     }
 
                                                 }
@@ -502,13 +545,22 @@ namespace SupplierRegistration
                                         {
                                             string fname = names[i].Trim();
                                             boolGetName = CheckNameFormatFullName(fname.Trim());
+                                            lastarrname2 = names[names.Length - 1];
                                             if (boolGetName == true)
                                             {
                                                 if (names.Length != 1)
                                                 {
                                                     if (names[i].Trim().Contains(",") == false)
                                                     {
-                                                        oName = oName + names[i].Trim() + ",";
+                                                        if (names[i] == lastarrname2)
+                                                        {
+                                                            oName = oName + names[i].Trim();
+                                                        }
+                                                        else
+                                                        {
+                                                            oName = oName + names[i].Trim() + ", ";
+                                                        }
+                                                        
                                                     }
                                                 }
                                                 else if (names.Length == 1)
@@ -544,8 +596,9 @@ namespace SupplierRegistration
                             bool boolGMCheck = CheckEmailFormat(GM.Trim());
                             bool boolMail = false;
                             bool boolCheckMail = true;
+                            string lastarremail = null;
                             //CheckFormatEmail#1
-                            words = Mail.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
+                            words = Mail.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
                             for (int i = 0; i < words.Length; i++)
                             {
                                 if (words[i] != "")
@@ -559,6 +612,7 @@ namespace SupplierRegistration
                                     else //Correct Format
                                     {
                                         checkMailFormat = words[i].Split(' ');
+                                        lastarremail = words[words.Length - 1];
                                         foreach (string mail in checkMailFormat) //Loop CheckMailFormat
                                         {
                                             if (mail != "")
@@ -568,9 +622,17 @@ namespace SupplierRegistration
                                                 if (boolMail == true) //True Format
                                                 {
                                                     string fwords = words[i].Trim();
-                                                    if (fwords.Contains(";") == false)
+                                                    if (fwords.Contains(",") == false)
                                                     {
-                                                        oMail = oMail + words[i].Trim() + ";";
+                                                        if (words[i] == lastarremail)
+                                                        {
+                                                            oMail = oMail + words[i].Trim();
+                                                        }
+                                                        else
+                                                        {
+                                                            oMail = oMail + words[i].Trim() + ", ";
+                                                        }
+                                                        
                                                     }
                                                     else
                                                     {
@@ -980,12 +1042,12 @@ namespace SupplierRegistration
                     }
 
                 }
-                string MailTo = emailTo.Replace(" ", "");
+                string MailTo = emailTo.Replace(",", ";");
 
-                foreach (var email in MailTo.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var email in MailTo.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries))
                 {
 
-                    myMail.To.Add(new MailAddress(email));
+                    myMail.To.Add(new MailAddress(email.Trim()));
                 }
 
                 //if (myMail.To.Count == emailTo.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries).Count())

@@ -1264,10 +1264,10 @@ namespace SupplierRegistration
 
                 if (emailTo != "")
                 {
-                    if (emailTo.Contains(","))
+                    if (emailTo.Contains(";"))
                     {
-                        string MailTo = emailTo.Replace(",", ";");
-                        foreach (var email in MailTo.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries))
+                        string MailTo = emailTo.Replace(" ", ";");
+                        foreach (var email in MailTo.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))
                         {
                             myMail.To.Add(new MailAddress(email.Trim()));
                         }
@@ -1284,12 +1284,12 @@ namespace SupplierRegistration
                 //{
                 if (emailFrom != "")
                 {
-                    if (emailFrom.Contains(";"))
+                    if (emailFrom.Contains(","))
                     {
-                        string MailFrom = emailFrom.Replace(" ", "");
+                        string MailFrom = emailFrom.Replace(",", ";");
                         foreach (var item in MailFrom.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))
                         {
-                            myMail.From = new MailAddress(item);
+                            myMail.From = new MailAddress(item.Trim());
 
 
                             myMail.BodyEncoding = Encoding.UTF8;
@@ -1310,6 +1310,29 @@ namespace SupplierRegistration
                             Clients.Host = Properties.Settings.Default.Ipmail;
                             Clients.Send(myMail);
                         }
+                    }
+                    else
+                    {
+                        myMail.From = new MailAddress(emailFrom.Trim());
+
+
+                        myMail.BodyEncoding = Encoding.UTF8;
+
+                        Header = "| Supplier Application system |";
+                        BodyMail = Client.DownloadString(Server.MapPath("Template/UploadTemplate.htm"));
+                        BodyMail = BodyMail.Replace("#NameTo", Emp_Name);
+                        BodyMail = BodyMail.Replace("#AppID", EncodeID);
+                        BodyMail = BodyMail.Replace("#Phone", Emp_Phone);
+                        BodyMail = BodyMail.Replace("#EmployeeName", Emp_Name);
+                        BodyMail = BodyMail.Replace("#image", Body);
+                        BodyMail = BodyMail.Replace("#link", link);
+                        AlternateView HtmlView;
+                        HtmlView = AlternateView.CreateAlternateViewFromString(BodyMail, null, "text/html");
+                        myMail.AlternateViews.Add(HtmlView);
+                        myMail.Subject = Header;
+                        SmtpClient Clients = new SmtpClient();
+                        Clients.Host = Properties.Settings.Default.Ipmail;
+                        Clients.Send(myMail);
                     }
                 }
                 //}

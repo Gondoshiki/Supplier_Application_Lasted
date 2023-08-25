@@ -427,7 +427,7 @@
                                     <%--<h5>File list</h5>--%>
                                     <%--Data Table--%>
 
-                                    <table id="tbFileJ" class="table table-hover bg-light" style="width: 100%;">
+                                    <table id="FileReject" class="table table-hover bg-light" style="width: 100%;">
                                         <thead>
                                             <tr>
                                                 <th>File list</th>

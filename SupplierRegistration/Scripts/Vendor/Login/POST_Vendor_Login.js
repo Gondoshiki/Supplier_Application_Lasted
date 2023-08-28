@@ -37,6 +37,7 @@
                 $('#PreviewFile_Title').fadeOut(2000);
                 $('#btnfnEditFile').hide();
                 $('#btnfnUploadLocal').hide();
+                $('#btnfnResetRevise').hide();
                 //========== Hide Upload Display=========================
                 $('#UploadDisplay').hide();
                 $('#btnfnUploadPreview').hide();
@@ -378,17 +379,22 @@ function resetPreview(value) {
                             //$('#tbFilePreview').fadeToggle(2000);
                         }
                         else if (value == "R") {
-                            $('#tbFileRevise').show();
-                            $('#btnfnEditPreview').show();
+                            console.log("Revise");
+                            var id = null;
+                            let searchParams = new URLSearchParams(window.location.search);                            
+                            var id = searchParams.get('id');
+                            fnGetFileRevise(id);
+                            //$('#tbFileRevise').show();
+                            //$('#btnfnEditPreview').show();
 
-                            //========== Hide tb file Preview =======================
-                            $('#tbFilePreview').fadeOut(2000)
-                            $('#PreviewFile_Title').fadeOut(2000);
-                            $('#btnfnEditFile').hide();
-                            $('#btnfnUploadLocal').hide();
-                            //========== Hide Upload Display=========================
-                            $('#UploadDisplay').hide();
-                            $('#btnfnUploadPreview').hide();
+                            ////========== Hide tb file Preview =======================
+                            //$('#tbFilePreview').fadeOut(2000)
+                            //$('#PreviewFile_Title').fadeOut(2000);
+                            //$('#btnfnEditFile').hide();
+                            //$('#btnfnUploadLocal').hide();
+                            ////========== Hide Upload Display=========================
+                            //$('#UploadDisplay').hide();
+                            //$('#btnfnUploadPreview').hide();
 
                         }
 

@@ -30,9 +30,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-1">
-                        <label for="system-name" class="col-form-label">Folder Name:</label>
+                        <label for="system-name" class="col-form-label">Title Name:</label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="FolderName" ErrorMessage="* Please fill in the fields." ForeColor="#ff0000" ValidationGroup="upload" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                        <input type="Text" class="form-control" id="FolderName" placeholder="Please fill folder name" runat="server" />
+                        <input type="Text" class="form-control" id="FolderName" placeholder="Please fill title name" runat="server" />
                         <asp:RegularExpressionValidator Display="Dynamic" ValidationGroup="upload" ID="RegularExpressionFolderName" runat="server" ControlToValidate="FolderName" ErrorMessage=" Enter only a-z A-Z 0-9 _ ห้ามเว้นวรรค" ValidationExpression="^[a-zA-Z0-9ก-๙,_]*$" Font-Bold="true" ForeColor="Red"> </asp:RegularExpressionValidator>
                         <div class="alert alert-info" style="margin-top: 10px">
                             <p>
@@ -70,9 +70,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-1">
-                        <label for="system-name" class="col-form-label">Folder Name:</label>
+                        <label for="system-name" class="col-form-label">Title Name:</label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="inpEditfolder" ErrorMessage="* Please fill in the fields." ForeColor="#ff0000" ValidationGroup="edit" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                        <input type="Text" class="form-control" id="inpEditfolder" placeholder="Please fill folder name" runat="server">
+                        <input type="Text" class="form-control" id="inpEditfolder" placeholder="Please fill title name" runat="server">
                         <asp:RegularExpressionValidator ValidationGroup="edit" ID="RegularExpressionValidator1" runat="server" ControlToValidate="inpEditfolder" ErrorMessage="*Enter only a-z A-Z 0-9 _ NO Space bar" ValidationExpression="^[a-zA-Z0-9,_]*$" Font-Bold="true" ForeColor="Red"> </asp:RegularExpressionValidator>
                         <div class="alert alert-info">
                             <p>

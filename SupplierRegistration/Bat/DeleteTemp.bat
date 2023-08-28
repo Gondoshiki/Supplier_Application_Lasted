@@ -1,0 +1,1 @@
+rd /s /q "C:\inetpub\wwwroot\SupplierApplication\Document\fileAttach\temp"

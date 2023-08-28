@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>\\192.168.10.17\c$\inetpub\wwwroot\SupplierApplication</_PublishTargetUrl>
-    <History>True|2023-08-24T07:29:00.3877235Z;True|2023-08-24T14:26:31.8531358+07:00;True|2023-08-10T11:28:40.7951577+07:00;True|2023-08-10T10:52:17.7245800+07:00;True|2023-08-09T15:35:33.5940967+07:00;False|2023-08-09T08:12:46.0958426+07:00;False|2023-08-08T14:15:05.2668524+07:00;True|2023-08-07T12:45:52.9583313+07:00;True|2023-08-07T10:47:44.0662569+07:00;True|2023-08-07T10:45:25.2430393+07:00;True|2023-07-14T15:57:00.2798544+07:00;True|2023-07-14T15:54:31.4970001+07:00;True|2023-07-14T15:53:08.5496981+07:00;True|2023-07-14T15:50:09.8515464+07:00;True|2023-07-14T15:42:12.1757763+07:00;True|2023-07-14T15:41:51.6224626+07:00;True|2023-07-14T15:36:11.5008656+07:00;True|2023-07-14T15:33:07.4337616+07:00;True|2023-07-14T15:30:50.0652407+07:00;True|2023-07-14T15:29:10.2816652+07:00;True|2023-07-14T15:18:46.6067461+07:00;True|2023-07-14T15:16:43.5424083+07:00;True|2023-07-14T15:13:46.2779865+07:00;True|2023-07-14T15:09:50.1661702+07:00;True|2023-07-14T13:18:03.5777025+07:00;True|2023-07-14T09:16:29.9729529+07:00;True|2023-07-14T08:07:17.6018189+07:00;True|2023-07-13T10:52:33.4543272+07:00;True|2023-07-13T09:51:07.4665029+07:00;True|2023-07-13T09:48:22.0126476+07:00;True|2023-07-13T09:31:09.7066509+07:00;False|2023-07-13T07:43:32.3054626+07:00;True|2023-07-13T07:42:15.2080245+07:00;False|2023-07-13T07:39:14.4117301+07:00;False|2023-07-13T07:37:21.4501279+07:00;</History>
+    <History>False|2023-08-28T02:41:36.3026693Z;True|2023-08-24T14:29:00.3877235+07:00;True|2023-08-24T14:26:31.8531358+07:00;True|2023-08-10T11:28:40.7951577+07:00;True|2023-08-10T10:52:17.7245800+07:00;True|2023-08-09T15:35:33.5940967+07:00;False|2023-08-09T08:12:46.0958426+07:00;False|2023-08-08T14:15:05.2668524+07:00;True|2023-08-07T12:45:52.9583313+07:00;True|2023-08-07T10:47:44.0662569+07:00;True|2023-08-07T10:45:25.2430393+07:00;True|2023-07-14T15:57:00.2798544+07:00;True|2023-07-14T15:54:31.4970001+07:00;True|2023-07-14T15:53:08.5496981+07:00;True|2023-07-14T15:50:09.8515464+07:00;True|2023-07-14T15:42:12.1757763+07:00;True|2023-07-14T15:41:51.6224626+07:00;True|2023-07-14T15:36:11.5008656+07:00;True|2023-07-14T15:33:07.4337616+07:00;True|2023-07-14T15:30:50.0652407+07:00;True|2023-07-14T15:29:10.2816652+07:00;True|2023-07-14T15:18:46.6067461+07:00;True|2023-07-14T15:16:43.5424083+07:00;True|2023-07-14T15:13:46.2779865+07:00;True|2023-07-14T15:09:50.1661702+07:00;True|2023-07-14T13:18:03.5777025+07:00;True|2023-07-14T09:16:29.9729529+07:00;True|2023-07-14T08:07:17.6018189+07:00;True|2023-07-13T10:52:33.4543272+07:00;True|2023-07-13T09:51:07.4665029+07:00;True|2023-07-13T09:48:22.0126476+07:00;True|2023-07-13T09:31:09.7066509+07:00;False|2023-07-13T07:43:32.3054626+07:00;True|2023-07-13T07:42:15.2080245+07:00;False|2023-07-13T07:39:14.4117301+07:00;False|2023-07-13T07:37:21.4501279+07:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
@@ -162,10 +162,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:01:22</publishTime>
     </File>
     <File Include="bin/SupplierRegistration.dll">
-      <publishTime>08/25/2023 16:13:52</publishTime>
+      <publishTime>08/28/2023 10:07:59</publishTime>
     </File>
     <File Include="bin/SupplierRegistration.pdb">
-      <publishTime>08/25/2023 16:13:52</publishTime>
+      <publishTime>08/28/2023 10:07:59</publishTime>
     </File>
     <File Include="bootstrap-steps-master/.gitignore">
       <publishTime>08/25/2023 09:00:53</publishTime>
@@ -216,7 +216,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:53</publishTime>
     </File>
     <File Include="Config.aspx">
-      <publishTime>08/25/2023 15:53:23</publishTime>
+      <publishTime>08/28/2023 10:07:51</publishTime>
     </File>
     <File Include="Content/all.min.css">
       <publishTime>08/25/2023 09:00:42</publishTime>
@@ -414,7 +414,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:43</publishTime>
     </File>
     <File Include="Draft.aspx">
-      <publishTime>08/25/2023 15:22:30</publishTime>
+      <publishTime>08/25/2023 16:17:26</publishTime>
     </File>
     <File Include="fontawesome-free-6.4.0-web/css/all.css">
       <publishTime>08/25/2023 09:00:53</publishTime>
@@ -13101,7 +13101,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:50</publishTime>
     </File>
     <File Include="Model/RejectTable.js">
-      <publishTime>08/25/2023 14:18:27</publishTime>
+      <publishTime>08/25/2023 16:17:26</publishTime>
     </File>
     <File Include="Model/ReviseTable.js">
       <publishTime>08/25/2023 09:00:50</publishTime>
@@ -13128,7 +13128,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:51</publishTime>
     </File>
     <File Include="PS_Form.aspx">
-      <publishTime>08/25/2023 15:21:31</publishTime>
+      <publishTime>08/25/2023 16:17:26</publishTime>
     </File>
     <File Include="PS_History.aspx">
       <publishTime>08/25/2023 09:00:51</publishTime>
@@ -13155,7 +13155,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:51</publishTime>
     </File>
     <File Include="PS_Revise.aspx">
-      <publishTime>08/25/2023 16:06:57</publishTime>
+      <publishTime>08/25/2023 16:17:26</publishTime>
     </File>
     <File Include="Scripts/Alert_Site_Master.js">
       <publishTime>08/25/2023 09:00:51</publishTime>
@@ -13179,13 +13179,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:51</publishTime>
     </File>
     <File Include="Scripts/PS/Config/Alert_Config.js">
-      <publishTime>08/25/2023 15:15:11</publishTime>
+      <publishTime>08/25/2023 16:17:26</publishTime>
     </File>
     <File Include="Scripts/PS/Config/POST_Config.js">
       <publishTime>08/25/2023 09:00:51</publishTime>
     </File>
     <File Include="Scripts/PS/Detail/Alert_PS_Detail.js">
-      <publishTime>08/25/2023 14:18:27</publishTime>
+      <publishTime>08/25/2023 16:17:26</publishTime>
     </File>
     <File Include="Scripts/PS/Detail/POST_PS_Detail.js">
       <publishTime>08/25/2023 09:00:51</publishTime>
@@ -13212,7 +13212,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:51</publishTime>
     </File>
     <File Include="Scripts/PS/Revise/Alert_PS_Revise.js">
-      <publishTime>08/25/2023 14:18:27</publishTime>
+      <publishTime>08/25/2023 16:17:26</publishTime>
     </File>
     <File Include="Scripts/PS/Revise/POST_PS_Revise.js">
       <publishTime>08/25/2023 09:00:51</publishTime>
@@ -13233,7 +13233,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:51</publishTime>
     </File>
     <File Include="Scripts/Vendor.js">
-      <publishTime>08/25/2023 14:18:27</publishTime>
+      <publishTime>08/28/2023 09:04:19</publishTime>
     </File>
     <File Include="Scripts/Vendor/Login/Alert_Vendor_Login.js">
       <publishTime>08/25/2023 14:18:27</publishTime>
@@ -13242,7 +13242,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:51</publishTime>
     </File>
     <File Include="Scripts/Vendor/Login/POST_Vendor_Login.js">
-      <publishTime>08/25/2023 14:18:27</publishTime>
+      <publishTime>08/28/2023 09:04:19</publishTime>
     </File>
     <File Include="Service.asmx">
       <publishTime>08/25/2023 09:00:51</publishTime>
@@ -13539,7 +13539,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:52</publishTime>
     </File>
     <File Include="Vendor_Login.aspx">
-      <publishTime>08/25/2023 14:38:03</publishTime>
+      <publishTime>08/28/2023 09:59:29</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>08/25/2023 11:33:00</publishTime>

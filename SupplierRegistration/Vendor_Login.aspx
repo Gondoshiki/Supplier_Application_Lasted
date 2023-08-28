@@ -157,7 +157,7 @@
                             <h3><i class="fa-solid fa-copy"></i> Draft File</h3>
                             <div class="alert alert-warning" style="margin-top: 10px">
                                 <strong><i class="fas fa-exclamation-triangle"></i></strong>
-                                -ไฟล์นี้จะมีอายุภายใน1เดือนหลังจากวันที่อัพโหลด                        
+                                -ไฟล์นี้จะมีอายุภายในสิ้นเดือน ของเดือนนั้นๆ                      
                                 <br />                   
                             </div>
                         </div>

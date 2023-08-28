@@ -316,19 +316,19 @@
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <p>
-                                    Vendor Name :
+                                    <b>Vendor Name :</b>
                                     <asp:Label ID="lbVendorName" runat="server" Text=""></asp:Label>
                                 </p>
                                 <p>
-                                    Vendor PIC :
+                                    <b>Vendor PIC :</b>
                                     <asp:Label ID="lbVendorPIC" runat="server" Text=""></asp:Label>
                                 </p>
                                 <p>
-                                    Email :
+                                    <b>Email :</b>
                                     <asp:Label ID="lbEmail" runat="server" Text=""></asp:Label>
                                 </p>
                                 <p id="UpdateDate">
-                                    Update_Date :
+                                    <b>Update_Date :</b>
                                     <asp:Label ID="lbUpdate_Date" runat="server" Text=""></asp:Label>
                                 </p>
                             </div>
@@ -551,11 +551,11 @@
                 <div class="mb-4">
                     <img src="StartBootstrap/startbootstrap-creative-gh-pages/assets/img/Hino-logo.png" style="width: 150px" />
                 </div>
-                <h4 class="mb-4" style="color: rgb(245, 245, 245);">Hino motors manufacturing (thailand) ltd</h4>
-                <p><i class="fa-solid fa-location-dot"></i>: 99 Moo 3, Teparak Road, Teparak, Muang Samutprakarn 10270</p>
-                <p><i class="fa-solid fa-phone"></i>: 0-2384-2900, Ext 408 (Natchawan), Ext 415 (Nuttanon), Ext 403 (Warinthon)</p>
-                <p><i class="fa-solid fa-fax"></i>: 02-384-0329</p>
-                <p><i class="fa-solid fa-envelope"></i>: Contact@hinothailand.com</p>
+                <h4 class="mb-4" style="color: rgb(245, 245, 245);">Hino Motors Manufacturing (Thailand) Ltd.</h4>
+                <p><i class="fa-solid fa-location-dot"></i> : 99 Moo 3, Teparak Road, Teparak, Muang Samutprakarn 10270</p>
+                <p><i class="fa-solid fa-phone"></i> : 0-2384-2900, Ext 408 (Natchawan), Ext 415 (Nuttanon), Ext 403 (Warinthon)</p>
+                <p><i class="fa-solid fa-fax"></i> : 02-384-0329</p>
+                <p><i class="fa-solid fa-envelope"></i> : Contact@hinothailand.com</p>
                 <%--<a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>--%>
             </div>
         </section>

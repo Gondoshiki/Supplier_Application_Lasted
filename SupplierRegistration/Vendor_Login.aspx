@@ -152,8 +152,14 @@
                         <asp:HiddenField ID="hdfFile" runat="server" />
                         <asp:HiddenField ID="hdfFileUploaded" runat="server" />
                         <asp:HiddenField ID="hdfStatus" runat="server" />
-                        <div class="alert alert-info" id="PreviewFile_Title" style="display: none">
-                            <h3>Preview File</h3>
+                        <div id="PreviewFile_Title" style="display: none">
+                            
+                            <h3><i class="fa-solid fa-copy"></i> Draft File</h3>
+                            <div class="alert alert-warning" style="margin-top: 10px">
+                                <strong><i class="fas fa-exclamation-triangle"></i></strong>
+                                -ไฟล์นี้จะมีอายุภายใน1เดือนหลังจากวันที่อัพโหลด                        
+                                <br />                   
+                            </div>
                         </div>
                         <table id="tbFilePreview" class="table table-hover bg-light" style="width: 100%; display: none">
                             <thead>

@@ -4627,6 +4627,7 @@
     <Content Include="Document\fileAttach\2023\202308\A202308-0007\Organization_Company\BomPartTemplate.xlsx" />
     <Content Include="Document\fileAttach\2023\202308\A202308-0007\PP20\10.xlsx" />
     <Content Include="Document\fileAttach\2023\202308\A202308-0007\SMEs_Research\BB.pdf" />
+    <Content Include="Bat\DeleteTemp.bat" />
     <None Include="packages.config" />
     <Content Include="Site.Master" />
     <None Include="Properties\Settings.settings">

@@ -178,26 +178,45 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <!-------------------For Preview file -------------------------------------->
-                        <button class="btn btn-danger" id="btnfnResetProcess" type="button" onclick="resetPreview('P')" style="display:none">Reset</button>
-                        <button class="btn btn-danger" id="btnfnResetRevise" type="button" onclick="resetPreview('R')" style="display:none">Reset</button>
-                        <button class="btn btn-dark" id="btnfnEditFile" onclick="dataTableController('1')" type="button" style="display: none">Edit File</button>
+                        <button class="btn btn-primary" id="btnfnResetProcess" type="button" onclick="resetPreview('P')" style="display:none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-rotate-left"></i></span>
+                            <span class="Text">Reset</span>
+                        </button>
+                        <button class="btn btn-primary" id="btnfnResetRevise" type="button" onclick="resetPreview('R')" style="display:none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-rotate-left"></i></span>
+                            <span class="Text">Reset</span>
+                        </button>
+                        <button class="btn btn-dark" id="btnfnEditFile" onclick="dataTableController('1')" type="button" style="display: none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-pen-to-square"></i></span>
+                            <span class="Text">Edit File</span>
+                        </button>
                         <button class="btn btn-danger" id="btnfnCancelEdit" onclick="dataTableController('1')" type="button" style="display: none">Cancel Edit</button>
 
 
                         <!-------------------For Preview Revise file -------------------------------------->
-                        <button class="btn btn-dark" id="btnfnEditRevise" onclick="dataTableController('2')" type="button" style="display: none">Edit File</button>
+                        <button class="btn btn-dark" id="btnfnEditRevise" onclick="dataTableController('2')" type="button" style="display: none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-pen-to-square"></i></span>
+                            <span class="Text">Edit File</span>
+                        </button>
                         <button class="btn btn-danger" id="btnfnCancelEditRevise" onclick="dataTableController('2')" type="button" style="display: none">Cancel Edit</button>
 
-                        <button class="btn btn-dark" id="btnfnEditPreview" onclick="editPreview()" type="button" style="display: none">Preview</button>
+                        <button class="btn btn-dark" id="btnfnEditPreview" onclick="editPreview()" type="button" style="display: none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span class="Text">Preview</span>
+                        </button>
                         <button class="btn btn-dark btn-icon-split" type="button" id="btnfnUploadPreview" validationgroup="ProcessUpload" onclick="UploadPreview('ProcessUpload')" style="display: none">
-                            <%--<span class="icon text-white-50" style="margin-right: auto">
-                            <i class="fas fa-check"></i>
-                          </span>--%>
+                            <i class="fa-solid fa-magnifying-glass"></i>
                             <span class="text" style="margin-right: auto">Preview</span>
                         </button>                       
 
-                        <button class="btn btn-success" id="btnfnUploadLocal" type="button" runat="server" onclick="UploadLocal()" style="display: none">Upload</button>
-                        <button class="btn btn-success" id="btnfnUploadRevise" type="button" runat="server" onclick="editPreview()" style="display: none">Upload Revise</button>
+                        <button class="btn btn-success" id="btnfnUploadLocal" type="button" runat="server" onclick="UploadLocal()" style="display: none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                            <span class="Text">Upload</span>
+                        </button>
+                        <button class="btn btn-success" id="btnfnUploadRevise" type="button" runat="server" onclick="editPreview()" style="display: none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                            <span class="Text">Upload Revise</span>
+                        </button>
 
                         <button class="btn btn-dark" id="btnUploadLocal" type="submit" runat="server" onserverclick="UploadLocal_Click" style="display: none">Move to Local</button>
                        
@@ -383,7 +402,10 @@
                                 <i class="fa-solid fa-arrows-rotate fs-1 text-info mb-2"></i>
                                 <h3>On Process</h3>
                                 <p>Please Upload Application file.</p>
-                                <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#uploadFileModal">Upload Files</button>
+                                <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#uploadFileModal">
+                                    <span class="icon text-white-50"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                                    <span class="Text">Upload Files</span>                                    
+                                </button>
                             </div>
                         </div>
                         <%--Revise card--%>
@@ -398,7 +420,10 @@
                                     <asp:Label ID="lbComment" runat="server" Text=""></asp:Label>
                                 </p>
 
-                                <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#uploadFileModal">Edit files</button>
+                                <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#uploadFileModal">
+                                    <span class="icon text-white-50"><i class="fa-solid fa-pen-to-square"></i></span>
+                                    <span class="Text">Edit Files</span>
+                                </button>
                             </div>
                         </div>
                         <%--Reject card--%>

@@ -75,7 +75,60 @@
                                 var dt = JSON.parse(JSON.stringify(server))
                                 if (server.length > 0) {
                                     if (value.Status == "R") {
-                                        fnGetFileRevise(id);                                        
+                                        $.ajax({
+                                            method: "POST",
+                                            url: "Service.asmx/GetFilePreview",
+                                            data: { ID: id },
+                                            dataType: "json",
+                                            /*contentType: "application/json; charset=utf-8",*/
+                                            success: function (response) {
+                                                if (response.length > 0) {
+                                                    $('#tbFilePreview').dataTable({
+                                                        order: [],
+                                                        searching: false,
+                                                        paging: false,
+                                                        info: false,
+                                                        responsive: true,
+                                                        autoWidth: false,
+                                                        data: response,
+                                                        //"drawCallback": function () {
+                                                        //    $("#tbFile thead").remove();
+                                                        //},
+                                                        "bDestroy": true,
+                                                        columns: [
+                                                            { data: 'Title' },
+                                                            { data: 'Source' },
+                                                            { data: 'Source1', visible: false }
+
+                                                        ],
+                                                        "columnDefs": [
+                                                            { autoWidth: false, "targets": [2] },
+
+                                                        ],
+                                                    });
+                                                    $('#tbFilePreview').fadeIn(2000);
+                                                    $('#PreviewFile_Title').fadeIn(2000);
+                                                    $('#btnfnEditFile').show();
+                                                    $('#btnfnUploadLocal').show();
+                                                    //========== Hide tb File Revise =======================
+                                                    $('#tbFileRevise').hide();
+                                                    $('#btnfnEditPreview').hide();
+                                                    $('#btnfnCancelEdit').hide();
+                                                    //========== Hide Upload Display=========================
+                                                    $('#UploadDisplay').hide();
+                                                    $('#btnfnUploadPreview').hide();
+                                                    if ($('#hdfStatus').val() == "P") {
+                                                        $('#btnfnResetProcess').show();
+                                                    }
+                                                    else if ($('#hdfStatus').val() == "R") {
+                                                        $('#btnfnResetRevise').show();
+                                                    }
+                                                }
+                                                else {
+                                                    fnGetFileRevise(id);
+                                                }
+                                            }
+                                        });
                                     }
                                     if (value.Status == "F") {
 

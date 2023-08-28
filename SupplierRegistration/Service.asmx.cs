@@ -1794,13 +1794,13 @@ namespace SupplierRegistration
                         if (fileAppForm.Length > 0)
                         {
                             ofilesAppForm.FileName = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/Application_Form/" + Path.GetFileName(fileAppForm[0]) + "' target='_blank'>" + Path.GetFileName(fileAppForm[0]) + "</a>";
-                            ofilesAppForm.Source = "<button class='btn btn-warning' type='button' id='AppRegis' data-toggle='modal' data-target='#ReplaceAppRegis'>Edit File</button>";
+                            ofilesAppForm.Source = "<button class='btn btn-secondary' type='button' id='AppRegis' data-toggle='modal' data-target='#ReplaceAppRegis'>Edit File</button>";
 
                         }
                         else
                         {
                             ofilesAppForm.FileName = "Not Found";
-                            ofilesAppForm.Source = "<button class='btn btn-primary' type='button' id='AppRegis' data-toggle='modal' data-target='#ReplaceAppRegis' >Add File</button>";
+                            ofilesAppForm.Source = "<button class='btn btn-secondary' type='button' id='AppRegis' data-toggle='modal' data-target='#ReplaceAppRegis' >Add File</button>";
                         }
                         oFileList.Add(ofilesAppForm);
                     }
@@ -1812,12 +1812,12 @@ namespace SupplierRegistration
                         if (fileSME.Length > 0)
                         {
                             ofilesSME.FileName = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/SMEs_Research/" + Path.GetFileName(fileSME[0]) + "' target='_blank'>" + Path.GetFileName(fileSME[0]) + "</a>";
-                            ofilesSME.Source = "<button class='btn btn-warning' type='button' id='SME' data-toggle='modal' data-target='#ReplaceSME' >Edit File</button>";
+                            ofilesSME.Source = "<button class='btn btn-secondary' type='button' id='SME' data-toggle='modal' data-target='#ReplaceSME' >Edit File</button>";
                         }
                         else
                         {
                             ofilesSME.FileName = "<p>Not Found</p>";
-                            ofilesSME.Source = "<button class='btn btn-primary' type='button' id='SME' data-toggle='modal' data-target='#ReplaceSME' >Add File</button>";
+                            ofilesSME.Source = "<button class='btn btn-secondary' type='button' id='SME' data-toggle='modal' data-target='#ReplaceSME' >Add File</button>";
 
                         }
                         oFileList.Add(ofilesSME);
@@ -1830,13 +1830,13 @@ namespace SupplierRegistration
                         if (fileRegisCert.Length > 0)
                         {
                             ofilesRegisCert.FileName = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/Registration_Certificate/" + Path.GetFileName(fileRegisCert[0]) + "' target='_blank'>" + Path.GetFileName(fileRegisCert[0]) + "</a>";
-                            ofilesRegisCert.Source = "<button class='btn btn-warning' type='button' id='RegisCert' data-toggle='modal' data-target='#ReplaceRegisCert'>Edit File</button>";
+                            ofilesRegisCert.Source = "<button class='btn btn-secondary' type='button' id='RegisCert' data-toggle='modal' data-target='#ReplaceRegisCert'>Edit File</button>";
 
                         }
                         else
                         {
                             ofilesRegisCert.FileName = "Not Found";
-                            ofilesRegisCert.Source = "<button class='btn btn-primary' type='button' id='RegisCert' data-toggle='modal' data-target='#ReplaceRegisCert'>Add File</button>";
+                            ofilesRegisCert.Source = "<button class='btn btn-secondary' type='button' id='RegisCert' data-toggle='modal' data-target='#ReplaceRegisCert'>Add File</button>";
 
                         }
                         oFileList.Add(ofilesRegisCert);
@@ -1851,13 +1851,13 @@ namespace SupplierRegistration
                         if (filePP20.Length > 0)
                         {
                             ofilesPP20.FileName = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/PP20/" + Path.GetFileName(filePP20[0]) + "' target='_blank'>" + Path.GetFileName(filePP20[0]) + "</a>";
-                            ofilesPP20.Source = "<button class='btn btn-warning' type='button' id='PP20' data-toggle='modal' data-target='#ReplacePP20'>Edit File</button>";
+                            ofilesPP20.Source = "<button class='btn btn-secondary' type='button' id='PP20' data-toggle='modal' data-target='#ReplacePP20'>Edit File</button>";
 
                         }
                         else
                         {
                             ofilesPP20.FileName = "Not Found";
-                            ofilesPP20.Source = "<button class='btn btn-primary' type='button' id='PP20' data-toggle='modal' data-target='#ReplacePP20' >Add File</button>";
+                            ofilesPP20.Source = "<button class='btn btn-secondary' type='button' id='PP20' data-toggle='modal' data-target='#ReplacePP20' >Add File</button>";
 
                         }
                         oFileList.Add(ofilesPP20);
@@ -1871,13 +1871,13 @@ namespace SupplierRegistration
                         if (fileBookBank.Length > 0)
                         {
                             ofilesBookBank.FileName = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/Book-Bank/" + Path.GetFileName(fileBookBank[0]) + "' target='_blank'>" + Path.GetFileName(fileBookBank[0]) + "</a>";
-                            ofilesBookBank.Source = "<button class='btn btn-warning' type='button'id='BookBank' data-toggle='modal' data-target='#ReplaceBookBank'>Edit File</button>";
+                            ofilesBookBank.Source = "<button class='btn btn-secondary' type='button'id='BookBank' data-toggle='modal' data-target='#ReplaceBookBank'>Edit File</button>";
 
                         }
                         else
                         {
                             ofilesBookBank.FileName = "Not Found";
-                            ofilesBookBank.Source = "<button class='btn btn-primary' type='button'  id='BookBank' data-toggle='modal' data-target='#ReplaceBookBank' >Add File</button>";
+                            ofilesBookBank.Source = "<button class='btn btn-secondary' type='button'  id='BookBank' data-toggle='modal' data-target='#ReplaceBookBank' >Add File</button>";
                         }
                         oFileList.Add(ofilesBookBank);
                     }
@@ -1889,13 +1889,13 @@ namespace SupplierRegistration
                         if (fileBOJ5.Length > 0)
                         {
                             ofilesBOJ5.FileName = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/BOJ5/" + Path.GetFileName(fileBOJ5[0]) + "' target='_blank'>" + Path.GetFileName(fileBOJ5[0]) + "</a>";
-                            ofilesBOJ5.Source = "<button class='btn btn-warning' type='button' id='BOJ5' data-toggle='modal' data-target='#ReplaceBOJ5'>Edit File</button>";
+                            ofilesBOJ5.Source = "<button class='btn btn-secondary' type='button' id='BOJ5' data-toggle='modal' data-target='#ReplaceBOJ5'>Edit File</button>";
 
                         }
                         else
                         {
                             ofilesBOJ5.FileName = "Not Found";
-                            ofilesBOJ5.Source = "<button class='btn btn-primary' type='button' id='BOJ5' data-toggle='modal' data-target='#ReplaceBOJ5' >Add File</button>";
+                            ofilesBOJ5.Source = "<button class='btn btn-secondary' type='button' id='BOJ5' data-toggle='modal' data-target='#ReplaceBOJ5' >Add File</button>";
 
                         }
                         oFileList.Add(ofilesBOJ5);
@@ -1909,13 +1909,13 @@ namespace SupplierRegistration
                         if (fileOrgCompany.Length > 0)
                         {
                             ofilesOrgCompany.FileName = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/Organization_Company/" + Path.GetFileName(fileOrgCompany[0]) + "' target='_blank'>" + Path.GetFileName(fileOrgCompany[0]) + "</a>";
-                            ofilesOrgCompany.Source = "<button class='btn btn-warning' type='button' id='OrgCompany' data-toggle='modal' data-target='#ReplaceOrgCompany' >Edit File</button>";
+                            ofilesOrgCompany.Source = "<button class='btn btn-secondary' type='button' id='OrgCompany' data-toggle='modal' data-target='#ReplaceOrgCompany' >Edit File</button>";
 
                         }
                         else
                         {
                             ofilesOrgCompany.FileName = "Not Found";
-                            ofilesOrgCompany.Source = "<button class='btn btn-primary' type='button' id='OrgCompany' data-toggle='modal' data-target='#ReplaceOrgCompany' >Add File</button>";
+                            ofilesOrgCompany.Source = "<button class='btn btn-secondary' type='button' id='OrgCompany' data-toggle='modal' data-target='#ReplaceOrgCompany' >Add File</button>";
 
                         }
                         oFileList.Add(ofilesOrgCompany);
@@ -1928,13 +1928,13 @@ namespace SupplierRegistration
                         if (fileSPS10.Length > 0)
                         {
                             ofilesSPS10.FileName = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/SPS1-10/" + Path.GetFileName(fileSPS10[0]) + "' target='_blank'>" + Path.GetFileName(fileSPS10[0]) + "</a>";
-                            ofilesSPS10.Source = "<button class='btn btn-warning' type='button' id='SPS10' data-toggle='modal' data-target='#ReplaceSPS10' >Edit File</button>";
+                            ofilesSPS10.Source = "<button class='btn btn-secondary' type='button' id='SPS10' data-toggle='modal' data-target='#ReplaceSPS10' >Edit File</button>";
 
                         }
                         else
                         {
                             ofilesSPS10.FileName = "Not Found";
-                            ofilesSPS10.Source = "<button class='btn btn-primary' type='button' id='SPS10' data-toggle='modal' data-target='#ReplaceSPS10' >Add File</button>";
+                            ofilesSPS10.Source = "<button class='btn btn-secondary' type='button' id='SPS10' data-toggle='modal' data-target='#ReplaceSPS10' >Add File</button>";
 
                         }
                         oFileList.Add(ofilesSPS10);

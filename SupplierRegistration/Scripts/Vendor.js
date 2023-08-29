@@ -1,5 +1,9 @@
 ﻿$(document).ready(function () {
 
+    $('#btnsavePreview').on("click", function (e) {
+        e.preventDefault();
+    })
+
     //Get App Detail
     $('#inpFileApp').on("change", function (event) {
     })

@@ -1032,7 +1032,7 @@ namespace SupplierRegistration
             {
                 oFileSPS10 = HttpContext.Current.Request.Files["fileSPS10"];
             }
-
+            string Path = Server.MapPath("Document\\fileAttach\\temp\\" + id);
             //oFileRegisCert_temp = Context.Request.Files[1]; 
             //oFilePP20_temp = Context.Request.Files[2]; 
             //oFileBookBank_temp = Context.Request.Files[3]; 
@@ -1040,256 +1040,256 @@ namespace SupplierRegistration
             //oFileOrgCompany_temp = Context.Request.Files[5]; 
             //oFileSPS10_temp = Context.Request.Files[6];            
 
-            try
-            {
-                if (countfile > 0 && id != "")
-                {
-                    string Path = Server.MapPath("Document\\fileAttach\\temp\\" + id);
-                    if (Directory.Exists(Path) == true)
-                    {
+            //try
+            //{
+            //    if (countfile > 0 && id != "")
+            //    {
+            //        string Path = Server.MapPath("Document\\fileAttach\\temp\\" + id);
+            //        if (Directory.Exists(Path) == true)
+            //        {
 
-                        if (oFileApp != null)
-                        {
-                            string pathAppForm = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Application_Form");
-                            string filename = oFileApp.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathAppForm) == true)
-                            {
-                                foreach (string file in Directory.GetFiles(pathAppForm))
-                                {
-                                    File.Delete(file);
-                                }
-                            }
-                            else
-                            {
-                                Directory.CreateDirectory(pathAppForm);
-                            }
-                            oFileApp.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Application_Form\\" + filename));
-                        }
-                        if (oFileSME != null)
-                        {
-                            string pathSME = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SMEs_Research");
-                            string filename = oFileSME.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathSME) == true)
-                            {
-                                foreach (string file in Directory.GetFiles(pathSME))
-                                {
-                                    File.Delete(file);
-                                }
-                            }
-                            else
-                            {
-                                Directory.CreateDirectory(pathSME);
-                            }
-                            oFileSME.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\SMEs_Research\\" + filename));
-                        }
-                        if (oFileRegisCert != null)
-                        {
-                            string pathRegisCert = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Registration_Certificate");
-                            string filename = oFileRegisCert.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathRegisCert) == true)
-                            {
-                                foreach (string file in Directory.GetFiles(pathRegisCert))
-                                {
-                                    File.Delete(file);
-                                }
-                            }
-                            else
-                            {
-                                Directory.CreateDirectory(pathRegisCert);
-                            }
-                            oFileRegisCert.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Registration_Certificate\\" + filename));
-                        }
-                        if (oFilePP20 != null)
-                        {
-                            string pathPP20 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\PP20");
-                            string filename = oFilePP20.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathPP20) == true)
-                            {
-                                foreach (string file in Directory.GetFiles(pathPP20))
-                                {
-                                    File.Delete(file);
-                                }
-                            }
-                            else
-                            {
-                                Directory.CreateDirectory(pathPP20);
-                            }
-                            oFilePP20.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\PP20\\" + filename));
-                        }
-                        if (oFileBookBank != null)
-                        {
-                            string pathBookBank = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Book-Bank");
-                            string filename = oFileBookBank.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathBookBank) == true)
-                            {
-                                foreach (string file in Directory.GetFiles(pathBookBank))
-                                {
-                                    File.Delete(file);
-                                }
+            //            if (oFileApp != null)
+            //            {
+            //                string pathAppForm = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Application_Form");
+            //                string filename = oFileApp.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathAppForm) == true)
+            //                {
+            //                    foreach (string file in Directory.GetFiles(pathAppForm))
+            //                    {
+            //                        File.Delete(file);
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    Directory.CreateDirectory(pathAppForm);
+            //                }
+            //                oFileApp.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Application_Form\\" + filename));
+            //            }
+            //            if (oFileSME != null)
+            //            {
+            //                string pathSME = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SMEs_Research");
+            //                string filename = oFileSME.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathSME) == true)
+            //                {
+            //                    foreach (string file in Directory.GetFiles(pathSME))
+            //                    {
+            //                        File.Delete(file);
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    Directory.CreateDirectory(pathSME);
+            //                }
+            //                oFileSME.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\SMEs_Research\\" + filename));
+            //            }
+            //            if (oFileRegisCert != null)
+            //            {
+            //                string pathRegisCert = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Registration_Certificate");
+            //                string filename = oFileRegisCert.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathRegisCert) == true)
+            //                {
+            //                    foreach (string file in Directory.GetFiles(pathRegisCert))
+            //                    {
+            //                        File.Delete(file);
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    Directory.CreateDirectory(pathRegisCert);
+            //                }
+            //                oFileRegisCert.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Registration_Certificate\\" + filename));
+            //            }
+            //            if (oFilePP20 != null)
+            //            {
+            //                string pathPP20 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\PP20");
+            //                string filename = oFilePP20.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathPP20) == true)
+            //                {
+            //                    foreach (string file in Directory.GetFiles(pathPP20))
+            //                    {
+            //                        File.Delete(file);
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    Directory.CreateDirectory(pathPP20);
+            //                }
+            //                oFilePP20.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\PP20\\" + filename));
+            //            }
+            //            if (oFileBookBank != null)
+            //            {
+            //                string pathBookBank = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Book-Bank");
+            //                string filename = oFileBookBank.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathBookBank) == true)
+            //                {
+            //                    foreach (string file in Directory.GetFiles(pathBookBank))
+            //                    {
+            //                        File.Delete(file);
+            //                    }
 
-                            }
-                            else
-                            {
-                                Directory.CreateDirectory(pathBookBank);
-                            }
-                            oFileBookBank.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Book-Bank\\" + filename));
-                        }
-                        if (oFileBOJ5 != null)
-                        {
-                            string pathBOJ5 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\BOJ5");
-                            string filename = oFileBOJ5.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathBOJ5) == true)
-                            {
-                                foreach (string file in Directory.GetFiles(pathBOJ5))
-                                {
-                                    File.Delete(file);
-                                }
-                            }
-                            else
-                            {
-                                Directory.CreateDirectory(pathBOJ5);
-                            }
-                            oFileBOJ5.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\BOJ5\\" + filename));
-                        }
-                        if (oFileOrgCompany != null)
-                        {
-                            string pathOrgCompany = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Organization_Company");
-                            string filename = oFileOrgCompany.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathOrgCompany) == true)
-                            {
-                                foreach (string file in Directory.GetFiles(pathOrgCompany))
-                                {
-                                    File.Delete(file);
-                                }
-                            }
-                            else
-                            {
-                                Directory.CreateDirectory(pathOrgCompany);
-                            }
-                            oFileOrgCompany.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Organization_Company\\" + filename));
-                        }
-                        if (oFileSPS10 != null)
-                        {
-                            string pathSPS10 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SPS1-10");
-                            string filename = oFileSPS10.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathSPS10) == true)
-                            {
-                                foreach (string file in Directory.GetFiles(pathSPS10))
-                                {
-                                    File.Delete(file);
-                                }
-                            }
-                            else
-                            {
-                                Directory.CreateDirectory(pathSPS10);
-                            }
-                            oFileSPS10.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\SPS1-10\\" + filename));
-                        }
-                    }
-                    else
-                    {
-                        Directory.CreateDirectory(Path);
-                        if (oFileApp != null)
-                        {
-                            string pathAppForm = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Application_Form");
-                            Directory.CreateDirectory(pathAppForm);
-                            string filename = oFileApp.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathAppForm) == true)
-                            {
-                                oFileApp.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Application_Form\\" + filename));
-                            }
-                        }
-                        if (oFileSME != null)
-                        {
-                            string pathSME = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SMEs_Research");
-                            Directory.CreateDirectory(pathSME);
-                            string filename = oFileSME.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathSME) == true)
-                            {
-                                oFileSME.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\SMEs_Research\\" + filename));
-                            }
+            //                }
+            //                else
+            //                {
+            //                    Directory.CreateDirectory(pathBookBank);
+            //                }
+            //                oFileBookBank.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Book-Bank\\" + filename));
+            //            }
+            //            if (oFileBOJ5 != null)
+            //            {
+            //                string pathBOJ5 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\BOJ5");
+            //                string filename = oFileBOJ5.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathBOJ5) == true)
+            //                {
+            //                    foreach (string file in Directory.GetFiles(pathBOJ5))
+            //                    {
+            //                        File.Delete(file);
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    Directory.CreateDirectory(pathBOJ5);
+            //                }
+            //                oFileBOJ5.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\BOJ5\\" + filename));
+            //            }
+            //            if (oFileOrgCompany != null)
+            //            {
+            //                string pathOrgCompany = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Organization_Company");
+            //                string filename = oFileOrgCompany.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathOrgCompany) == true)
+            //                {
+            //                    foreach (string file in Directory.GetFiles(pathOrgCompany))
+            //                    {
+            //                        File.Delete(file);
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    Directory.CreateDirectory(pathOrgCompany);
+            //                }
+            //                oFileOrgCompany.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Organization_Company\\" + filename));
+            //            }
+            //            if (oFileSPS10 != null)
+            //            {
+            //                string pathSPS10 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SPS1-10");
+            //                string filename = oFileSPS10.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathSPS10) == true)
+            //                {
+            //                    foreach (string file in Directory.GetFiles(pathSPS10))
+            //                    {
+            //                        File.Delete(file);
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    Directory.CreateDirectory(pathSPS10);
+            //                }
+            //                oFileSPS10.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\SPS1-10\\" + filename));
+            //            }
+            //        }
+            //        else
+            //        {
+            //            Directory.CreateDirectory(Path);
+            //            if (oFileApp != null)
+            //            {
+            //                string pathAppForm = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Application_Form");
+            //                Directory.CreateDirectory(pathAppForm);
+            //                string filename = oFileApp.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathAppForm) == true)
+            //                {
+            //                    oFileApp.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Application_Form\\" + filename));
+            //                }
+            //            }
+            //            if (oFileSME != null)
+            //            {
+            //                string pathSME = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SMEs_Research");
+            //                Directory.CreateDirectory(pathSME);
+            //                string filename = oFileSME.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathSME) == true)
+            //                {
+            //                    oFileSME.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\SMEs_Research\\" + filename));
+            //                }
 
-                        }
-                        if (oFileRegisCert != null)
-                        {
-                            string pathRegisCert = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Registration_Certificate");
-                            Directory.CreateDirectory(pathRegisCert);
-                            string filename = oFileRegisCert.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathRegisCert) == true)
-                            {
-                                oFileRegisCert.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Registration_Certificate\\" + filename));
-                            }
+            //            }
+            //            if (oFileRegisCert != null)
+            //            {
+            //                string pathRegisCert = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Registration_Certificate");
+            //                Directory.CreateDirectory(pathRegisCert);
+            //                string filename = oFileRegisCert.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathRegisCert) == true)
+            //                {
+            //                    oFileRegisCert.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Registration_Certificate\\" + filename));
+            //                }
 
-                        }
-                        if (oFilePP20 != null)
-                        {
-                            string pathPP20 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\PP20");
-                            Directory.CreateDirectory(pathPP20);
-                            string filename = oFilePP20.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathPP20) == true)
-                            {
-                                oFilePP20.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\PP20\\" + filename));
-                            }
+            //            }
+            //            if (oFilePP20 != null)
+            //            {
+            //                string pathPP20 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\PP20");
+            //                Directory.CreateDirectory(pathPP20);
+            //                string filename = oFilePP20.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathPP20) == true)
+            //                {
+            //                    oFilePP20.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\PP20\\" + filename));
+            //                }
 
-                        }
-                        if (oFileBookBank != null)
-                        {
-                            string pathBookBank = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Book-Bank");
-                            Directory.CreateDirectory(pathBookBank);
-                            string filename = oFileBookBank.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathBookBank) == true)
-                            {
-                                oFileBookBank.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Book-Bank\\" + filename));
+            //            }
+            //            if (oFileBookBank != null)
+            //            {
+            //                string pathBookBank = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Book-Bank");
+            //                Directory.CreateDirectory(pathBookBank);
+            //                string filename = oFileBookBank.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathBookBank) == true)
+            //                {
+            //                    oFileBookBank.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Book-Bank\\" + filename));
 
-                            }
+            //                }
 
-                        }
-                        if (oFileBOJ5 != null)
-                        {
-                            string pathBOJ5 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\BOJ5");
-                            Directory.CreateDirectory(pathBOJ5);
-                            string filename = oFileBOJ5.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathBOJ5) == true)
-                            {
-                                oFileBOJ5.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\BOJ5\\" + filename));
-                            }
+            //            }
+            //            if (oFileBOJ5 != null)
+            //            {
+            //                string pathBOJ5 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\BOJ5");
+            //                Directory.CreateDirectory(pathBOJ5);
+            //                string filename = oFileBOJ5.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathBOJ5) == true)
+            //                {
+            //                    oFileBOJ5.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\BOJ5\\" + filename));
+            //                }
 
-                        }
-                        if (oFileOrgCompany != null)
-                        {
-                            string pathOrgCompany = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Organization_Company");
-                            Directory.CreateDirectory(pathOrgCompany);
-                            string filename = oFileOrgCompany.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathOrgCompany) == true)
-                            {
-                                oFileOrgCompany.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Organization_Company\\" + filename));
-                            }
+            //            }
+            //            if (oFileOrgCompany != null)
+            //            {
+            //                string pathOrgCompany = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Organization_Company");
+            //                Directory.CreateDirectory(pathOrgCompany);
+            //                string filename = oFileOrgCompany.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathOrgCompany) == true)
+            //                {
+            //                    oFileOrgCompany.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Organization_Company\\" + filename));
+            //                }
 
-                        }
-                        if (oFileSPS10 != null)
-                        {
-                            string pathSPS10 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SPS1-10");
-                            Directory.CreateDirectory(pathSPS10);
-                            string filename = oFileSPS10.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
-                            if (Directory.Exists(pathSPS10) == true)
-                            {
-                                oFileSPS10.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\SPS1-10\\" + filename));
-                            }
-                        }
-                    }
-                    Context.Response.Write(JsonConvert.SerializeObject("success").ToString());
-                    Context.Response.End();
-                }
-                else
-                {
-                    Context.Response.Write(JsonConvert.SerializeObject("fail").ToString());
-                    Context.Response.End();
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
+            //            }
+            //            if (oFileSPS10 != null)
+            //            {
+            //                string pathSPS10 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SPS1-10");
+            //                Directory.CreateDirectory(pathSPS10);
+            //                string filename = oFileSPS10.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+            //                if (Directory.Exists(pathSPS10) == true)
+            //                {
+            //                    oFileSPS10.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\SPS1-10\\" + filename));
+            //                }
+            //            }
+            //        }
+            //        Context.Response.Write(JsonConvert.SerializeObject("success").ToString());
+            //        //Context.Response.End();
+            //    }
+            //    else
+            //    {
+            //        Context.Response.Write(JsonConvert.SerializeObject("fail").ToString());
+            //        //Context.Response.End();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Context.Response.Write(JsonConvert.SerializeObject(ex.Message).ToString());
+            //}
 
         }
         public void UploadRevise()

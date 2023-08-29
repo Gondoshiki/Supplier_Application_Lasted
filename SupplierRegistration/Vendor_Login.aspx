@@ -223,7 +223,7 @@
                             <span class="icon text-white-50"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
                             <span class="Text">Upload Revise</span>
                         </button>
-
+                        <button class="btn btn-dark" id="btnsavePreview" type="submit" runat="server" onserverclick="SavePreview_Click" style="display: none">Save Preview</button>
                         <button class="btn btn-dark" id="btnUploadLocal" type="submit" runat="server" onserverclick="UploadLocal_Click" style="display: none">Move to Local</button>
                        
                     </div>

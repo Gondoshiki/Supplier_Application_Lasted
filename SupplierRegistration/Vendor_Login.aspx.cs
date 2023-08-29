@@ -226,7 +226,6 @@ namespace SupplierRegistration
 
             }
         }
-        [WebMethod]
         protected void SavePreview_Click(object sender, EventArgs e)
         {
             StringBuilder sql = new StringBuilder();
@@ -270,9 +269,27 @@ namespace SupplierRegistration
                             }
                             oFile.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Application_Form\\" + filename));
                         }
-                        if (inpFileRegisCert.Value != "")
+                        if (inpFileSME.Value != "")
                         {
                             oFile = Context.Request.Files[1];
+                            string pathSME = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SMEs_Research");
+                            string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+                            if (Directory.Exists(pathSME) == true)
+                            {
+                                foreach (string file in Directory.GetFiles(pathSME))
+                                {
+                                    File.Delete(file);
+                                }
+                            }
+                            else
+                            {
+                                Directory.CreateDirectory(pathSME);
+                            }
+                            oFile.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\SMEs_Research\\" + filename));
+                        }
+                        if (inpFileRegisCert.Value != "")
+                        {
+                            oFile = Context.Request.Files[2];
                             string pathRegisCert = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Registration_Certificate");
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
                             if (Directory.Exists(pathRegisCert) == true)
@@ -291,7 +308,7 @@ namespace SupplierRegistration
                         if (inpFilePP20.Value != "")
                         {
                             string pathPP20 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\PP20");
-                            oFile = Context.Request.Files[2];
+                            oFile = Context.Request.Files[3];
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
                             if (Directory.Exists(pathPP20) == true)
                             {
@@ -309,7 +326,7 @@ namespace SupplierRegistration
                         if (inpFileBookBank.Value != "")
                         {
                             string pathBookBank = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Book-Bank");
-                            oFile = Context.Request.Files[3];
+                            oFile = Context.Request.Files[4];
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
                             if (Directory.Exists(pathBookBank) == true)
                             {
@@ -328,7 +345,7 @@ namespace SupplierRegistration
                         if (inpFileBOJ5.Value != "")
                         {
                             string pathBOJ5 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\BOJ5");
-                            oFile = Context.Request.Files[4];
+                            oFile = Context.Request.Files[5];
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
                             if (Directory.Exists(pathBOJ5) == true)
                             {
@@ -346,7 +363,7 @@ namespace SupplierRegistration
                         if (inpFileOrgCompany.Value != "")
                         {
                             string pathOrgCompany = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Organization_Company");
-                            oFile = Context.Request.Files[5];
+                            oFile = Context.Request.Files[6];
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
                             if (Directory.Exists(pathOrgCompany) == true)
                             {
@@ -363,7 +380,7 @@ namespace SupplierRegistration
                         }
                         if (inpFileSPS10.Value != "")
                         {
-                            oFile = Context.Request.Files[6];
+                            oFile = Context.Request.Files[7];
                             string pathSPS10 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SPS1-10");
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
                             if (Directory.Exists(pathSPS10) == true)
@@ -394,9 +411,21 @@ namespace SupplierRegistration
                                 oFile.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\Application_Form\\" + filename));
                             }
                         }
-                        if (inpFileRegisCert.Value != "")
+                        if (inpFileSME.Value != "")
                         {
                             oFile = Context.Request.Files[1];
+                            string pathSME = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SMEs_Research");
+                            Directory.CreateDirectory(pathSME);
+                            string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
+                            if (Directory.Exists(pathSME) == true)
+                            {
+                                oFile.SaveAs(Server.MapPath("Document\\FileAttach\\temp\\" + id + "\\SMEs_Research\\" + filename));
+                            }
+
+                        }
+                        if (inpFileRegisCert.Value != "")
+                        {
+                            oFile = Context.Request.Files[2];
                             string pathRegisCert = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Registration_Certificate");
                             Directory.CreateDirectory(pathRegisCert);
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
@@ -410,7 +439,7 @@ namespace SupplierRegistration
                         {
                             string pathPP20 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\PP20");
                             Directory.CreateDirectory(pathPP20);
-                            oFile = Context.Request.Files[2];
+                            oFile = Context.Request.Files[3];
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
                             if (Directory.Exists(pathPP20) == true)
                             {
@@ -422,7 +451,7 @@ namespace SupplierRegistration
                         {
                             string pathBookBank = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Book-Bank");
                             Directory.CreateDirectory(pathBookBank);
-                            oFile = Context.Request.Files[3];
+                            oFile = Context.Request.Files[4];
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
                             if (Directory.Exists(pathBookBank) == true)
                             {
@@ -435,7 +464,7 @@ namespace SupplierRegistration
                         {
                             string pathBOJ5 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\BOJ5");
                             Directory.CreateDirectory(pathBOJ5);
-                            oFile = Context.Request.Files[4];
+                            oFile = Context.Request.Files[5];
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
                             if (Directory.Exists(pathBOJ5) == true)
                             {
@@ -447,7 +476,7 @@ namespace SupplierRegistration
                         {
                             string pathOrgCompany = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\Organization_Company");
                             Directory.CreateDirectory(pathOrgCompany);
-                            oFile = Context.Request.Files[5];
+                            oFile = Context.Request.Files[6];
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");
                             if (Directory.Exists(pathOrgCompany) == true)
                             {
@@ -457,7 +486,7 @@ namespace SupplierRegistration
                         }
                         if (inpFileSPS10.Value != "")
                         {
-                            oFile = Context.Request.Files[6];
+                            oFile = Context.Request.Files[7];
                             string pathSPS10 = Server.MapPath("Document\\fileAttach\\temp\\" + id + "\\SPS1-10");
                             Directory.CreateDirectory(pathSPS10);
                             string filename = oFile.FileName.ToString().Replace("'", "").Replace("%", "").Replace("$", "").Replace("#", "");

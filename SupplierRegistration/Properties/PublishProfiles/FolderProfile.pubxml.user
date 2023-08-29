@@ -9,7 +9,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
   </PropertyGroup>
   <ItemGroup>
     <File Include="Bat/DeleteTemp.bat">
-      <publishTime>08/28/2023 11:08:40</publishTime>
+      <publishTime>08/28/2023 15:40:21</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>08/25/2023 09:01:21</publishTime>
@@ -165,10 +165,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:01:22</publishTime>
     </File>
     <File Include="bin/SupplierRegistration.dll">
-      <publishTime>08/28/2023 15:37:35</publishTime>
+      <publishTime>08/29/2023 18:15:18</publishTime>
     </File>
     <File Include="bin/SupplierRegistration.pdb">
-      <publishTime>08/28/2023 15:37:35</publishTime>
+      <publishTime>08/29/2023 18:15:18</publishTime>
     </File>
     <File Include="bootstrap-steps-master/.gitignore">
       <publishTime>08/25/2023 09:00:53</publishTime>
@@ -13236,16 +13236,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:51</publishTime>
     </File>
     <File Include="Scripts/Vendor.js">
-      <publishTime>08/28/2023 11:08:41</publishTime>
+      <publishTime>08/29/2023 17:35:54</publishTime>
     </File>
     <File Include="Scripts/Vendor/Login/Alert_Vendor_Login.js">
       <publishTime>08/25/2023 14:18:27</publishTime>
     </File>
     <File Include="Scripts/Vendor/Login/Get_Vendor_Login.js">
-      <publishTime>08/25/2023 09:00:51</publishTime>
+      <publishTime>08/29/2023 18:18:13</publishTime>
     </File>
     <File Include="Scripts/Vendor/Login/POST_Vendor_Login.js">
-      <publishTime>08/28/2023 11:08:41</publishTime>
+      <publishTime>08/29/2023 18:15:15</publishTime>
     </File>
     <File Include="Service.asmx">
       <publishTime>08/25/2023 09:00:51</publishTime>
@@ -13389,7 +13389,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:51</publishTime>
     </File>
     <File Include="StartBootstrap/startbootstrap-creative-gh-pages/css/styles.css">
-      <publishTime>08/28/2023 13:14:07</publishTime>
+      <publishTime>08/28/2023 15:40:21</publishTime>
     </File>
     <File Include="StartBootstrap/startbootstrap-creative-gh-pages/index.html">
       <publishTime>08/25/2023 09:00:51</publishTime>
@@ -13542,10 +13542,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:52</publishTime>
     </File>
     <File Include="Vendor_Login.aspx">
-      <publishTime>08/28/2023 15:37:29</publishTime>
+      <publishTime>08/29/2023 18:08:03</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/25/2023 11:33:00</publishTime>
+      <publishTime>08/29/2023 17:20:50</publishTime>
     </File>
   </ItemGroup>
 </Project>

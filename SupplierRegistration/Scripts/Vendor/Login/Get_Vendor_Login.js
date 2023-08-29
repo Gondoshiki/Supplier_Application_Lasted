@@ -2,8 +2,8 @@
     $('#UploadDisplay').show();
     $('#btnfnUploadPreview').show();
     //========== Hide tb File Preview =======================
-    $('#tbFilePreview').fadeOut(2000);
-    $('#PreviewFile_Title').fadeOut(2000);
+    $('#tbFilePreview').fadeOut(500);
+    $('#PreviewFile_Title').fadeOut(500);
     $('#btnfnResetProcess').hide();
     $('#btnfnEditFile').hide();
     $('#btnfnUploadLocal').hide();

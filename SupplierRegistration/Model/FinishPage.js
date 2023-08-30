@@ -32,7 +32,7 @@
                     { data: 'FileName' },
                     { data: 'Source', visible: false },
                 ],
-                order: [[0, 'asc']],
+                order: [],
             });
 
         },

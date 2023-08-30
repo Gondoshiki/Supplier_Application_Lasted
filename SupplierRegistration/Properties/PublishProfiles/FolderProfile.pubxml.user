@@ -165,10 +165,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:01:22</publishTime>
     </File>
     <File Include="bin/SupplierRegistration.dll">
-      <publishTime>08/30/2023 13:58:25</publishTime>
+      <publishTime>08/30/2023 14:12:57</publishTime>
     </File>
     <File Include="bin/SupplierRegistration.pdb">
-      <publishTime>08/30/2023 13:58:25</publishTime>
+      <publishTime>08/30/2023 14:12:57</publishTime>
     </File>
     <File Include="bootstrap-steps-master/.gitignore">
       <publishTime>08/25/2023 09:00:53</publishTime>
@@ -411,10 +411,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/25/2023 09:00:43</publishTime>
     </File>
     <File Include="Document/fileAttach/Manual Supplier Web Application for Developer.docx">
-      <publishTime>08/25/2023 09:00:42</publishTime>
+      <publishTime>08/30/2023 14:10:58</publishTime>
     </File>
     <File Include="Document/fileAttach/Manual/Manual Supplier Web Application.pdf">
-      <publishTime>08/25/2023 09:00:43</publishTime>
+      <publishTime>08/30/2023 14:11:47</publishTime>
     </File>
     <File Include="Draft.aspx">
       <publishTime>08/25/2023 16:17:26</publishTime>

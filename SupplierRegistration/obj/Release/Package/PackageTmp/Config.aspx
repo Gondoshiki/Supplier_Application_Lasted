@@ -30,18 +30,19 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-1">
-                        <label for="system-name" class="col-form-label">Title Name:</label>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="FolderName" ErrorMessage="* Please fill in the fields." ForeColor="#ff0000" ValidationGroup="upload" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                        <input type="Text" class="form-control" id="FolderName" placeholder="Please fill title name" runat="server" />
-                        <asp:RegularExpressionValidator Display="Dynamic" ValidationGroup="upload" ID="RegularExpressionFolderName" runat="server" ControlToValidate="FolderName" ErrorMessage=" Enter only a-z A-Z 0-9 _ ห้ามเว้นวรรค" ValidationExpression="^[a-zA-Z0-9ก-๙,_]*$" Font-Bold="true" ForeColor="Red"> </asp:RegularExpressionValidator>
-                        <div class="alert alert-info" style="margin-top: 10px">
+                        <div class="alert alert-info">
                             <p>
                                 <strong><i class="fas fa-exclamation-triangle"></i></strong>
                                 <b>ข้อความในฟิลนี้จะถูกนำไปแสดงบนหน้า Landing Page</b>
                             </p>
                             -กรณีที่ต้องการเว้นวรรค ให้ใส่เครื่องหมาย _ แทนการเว้นวรรค                         
-                        <br />
+                        
                         </div>
+                        <label for="system-name" class="col-form-label">Title Name:</label>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="FolderName" ErrorMessage="* Please fill in the fields." ForeColor="#ff0000" ValidationGroup="upload" SetFocusOnError="true"></asp:RequiredFieldValidator>
+                        <input type="Text" class="form-control" id="FolderName" placeholder="Please fill title name" runat="server" />
+                        <asp:RegularExpressionValidator Display="Dynamic" ValidationGroup="upload" ID="RegularExpressionFolderName" runat="server" ControlToValidate="FolderName" ErrorMessage=" Enter only a-z A-Z 0-9 _ ห้ามเว้นวรรค" ValidationExpression="^[a-zA-Z0-9ก-๙,_]*$" Font-Bold="true" ForeColor="Red"> </asp:RegularExpressionValidator>
+                        
                     </div>
                     <div class="mb-3">
                         <label for="system-name" class="col-form-label">File:</label>

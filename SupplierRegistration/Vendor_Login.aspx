@@ -78,7 +78,7 @@
                     <div class="modal-body" id="inputFormFile">
                         <div id="UploadDisplay" style="display: none">
                             <div class="mb-3">
-                                <label class="form-label" for="inpAppFile">Application form (.xlsx) :</label>
+                                <label class="form-label" for="inpAppFile">Application form (.xlsx) : <p style="display:inline; color:red">(สามารถดาวน์โหลดไฟล์ Application form ได้ที่ด้านบนเพจ)</p></label>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="inpFileApp" ErrorMessage="*" ForeColor="#ff0000" ValidationGroup="ProcessUpload" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lbFileApp" runat="server" Text=""></asp:Label>
                                 <div class="input-group">
@@ -87,7 +87,7 @@
 
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="fileInput">SMEs Research :</label>
+                                <label class="form-label" for="fileInput">SMEs Research : <p style="display:inline; color:red">(สามารถดาวน์โหลดไฟล์ SMEs Research ได้ที่ด้านบนเพจ)</p></label>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="inpFileSME" ErrorMessage="*" ForeColor="#ff0000" ValidationGroup="ProcessUpload" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lbFileSME" runat="server" Text=""></asp:Label>
                                 <div class="input-group">
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="fileInput">ภพ.20 :</label>
+                                <label class="form-label" for="fileInput">ภพ.20/ภพ.01/ภพ.09 : <p style="display:inline; color:red">(อายุไม่เกิน 6 เดือน)</p></label>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="inpFilePP20" ErrorMessage="*" ForeColor="#ff0000" ValidationGroup="ProcessUpload" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lbFilePP20" runat="server" Text=""></asp:Label>
                                 <div class="input-group">
@@ -132,7 +132,6 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="fileInput">Organization company :</label>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="inpFileOrgCompany" ErrorMessage="*" ForeColor="#ff0000" ValidationGroup="ProcessUpload" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lbFileOrgCompany" runat="server" Text=""></asp:Label>
                                 <div class="input-group">
                                     <input class="form-control" type="file" id="inpFileOrgCompany" runat="server" onchange="checkFile(inpFileOrgCompany)" />

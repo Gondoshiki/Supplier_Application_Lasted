@@ -470,7 +470,7 @@ namespace SupplierRegistration
                         filePP20 = System.IO.Directory.GetFiles(Server.MapPath("Document\\fileAttach\\" + folder + "\\" + subfolder + "\\" + AppID + "\\PP20"));
 
 
-                        ofilesPP20.Title = "<p>ภพ.20 :</p>";
+                        ofilesPP20.Title = "<p>ภพ.20/ภพ.01/ภพ.09 :</p>";
                         if (filePP20.Length > 0)
                         {
                             ofilesPP20.FileName = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/PP20/" + Path.GetFileName(filePP20[0]) + "' target='_blank'>" + Path.GetFileName(filePP20[0]) + "</a>";

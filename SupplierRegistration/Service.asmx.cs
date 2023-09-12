@@ -198,7 +198,7 @@ namespace SupplierRegistration
                             {
                                 string PathName = Path.GetFileName(filePP20[0]);
                                 FileList ofilesPP20 = new FileList();
-                                ofilesPP20.Title = "<p>ภพ.20 :</p>";
+                                ofilesPP20.Title = "<p>ภพ.20/ภพ.01/ภพ.09 :</p>";
                                 ofilesPP20.FileName = PathName;
                                 ofilesPP20.Source = "<a id='taFilePP20' href='Document/fileAttach/temp/" + AppID + "/PP20/" + Uri.EscapeUriString(PathName) + "' target='_blank'>" + Path.GetFileName(filePP20[0]) + "</a>";
                                 ofilesPP20.Source1 = "<asp:RequiredFieldValidator ID='RequiredFieldValidator1' runat='server' ControlToValidate='inpPP20_temp' ErrorMessage=' * ' ForeColor='#ff0000' ValidationGroup='editUpload' SetFocusOnError='true'></asp:RequiredFieldValidator>";
@@ -386,7 +386,7 @@ namespace SupplierRegistration
                             {
                                 string PathName = Path.GetFileName(filePP20[0]);
                                 FileList ofilesPP20 = new FileList();
-                                ofilesPP20.Title = "<p>ภพ.20 :</p>";
+                                ofilesPP20.Title = "<p>ภพ.20/ภพ.01/ภพ.09 :</p>";
                                 ofilesPP20.FileName = PathName;
                                 ofilesPP20.Source = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/PP20/" + Uri.EscapeUriString(PathName) + "' target='_blank'>" + Path.GetFileName(filePP20[0]) + "</a>";
                                 ofilesPP20.Source1 += "<input type='file' id='inpPP20_temp' onchange='checkFile(inpPP20_temp)' class='form-control' runat='server' />";
@@ -558,7 +558,7 @@ namespace SupplierRegistration
                             {
                                 string PathName = Path.GetFileName(filePP20[0]);
                                 FileList ofilesPP20 = new FileList();
-                                ofilesPP20.Title = "<p>ภพ.20 :</p>";
+                                ofilesPP20.Title = "<p>ภพ.20/ภพ.01/ภพ.09 :</p>";
                                 ofilesPP20.FileName = PathName;
                                 ofilesPP20.Source = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/PP20/" + Uri.EscapeUriString(PathName) + "' target='_blank'>" + Path.GetFileName(filePP20[0]) + "</a>";
 
@@ -1847,7 +1847,7 @@ namespace SupplierRegistration
                         filePP20 = System.IO.Directory.GetFiles(Server.MapPath("Document\\fileAttach\\" + folder + "\\" + subfolder + "\\" + AppID + "\\PP20"));
 
 
-                        ofilesPP20.Title = "<p>ภพ.20 :</p>";
+                        ofilesPP20.Title = "<p>ภพ.20/ภพ.01/ภพ.09 :</p>";
                         if (filePP20.Length > 0)
                         {
                             ofilesPP20.FileName = "<a href='Document/fileAttach/" + folder + "/" + subfolder + "/" + AppID + "/PP20/" + Path.GetFileName(filePP20[0]) + "' target='_blank'>" + Path.GetFileName(filePP20[0]) + "</a>";

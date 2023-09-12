@@ -69,7 +69,7 @@ namespace SupplierRegistration
                         }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(Page, typeof(System.Web.UI.Page), "Popup", "oAlert('error', 'Upload fail', 'Have a same folder name');", true);
+                            ScriptManager.RegisterStartupScript(Page, typeof(System.Web.UI.Page), "Popup", "oAlert('error', 'Upload fail', 'This folder already exists');", true);
                             //string Path1 = Server.MapPath("Document\\fileAttach\\form\\");
                             //if (Directory.Exists(Path1) == false)
                             //{
@@ -166,13 +166,13 @@ namespace SupplierRegistration
                     //Password = oDt.Rows[0]["Password"].ToString();
                     if (oDt.Rows[0]["Result"].ToString() == "0")
                     {
-                        ScriptManager.RegisterStartupScript(Page, typeof(System.Web.UI.Page), "Popup", "oAlert('error', 'Add Authorize fail', 'Found Employee ID : " + EmpID + " in Database');", true);
+                        ScriptManager.RegisterStartupScript(Page, typeof(System.Web.UI.Page), "Popup", "oAlert('error', 'Add Authorize fail', 'Employee ID : " + EmpID + " already exists');", true);
                     }
                     else
                     {
                         if (oDt.Rows[0]["Result"].ToString() == "1")
                         {
-                            ScriptManager.RegisterStartupScript(Page, typeof(System.Web.UI.Page), "Popup", "oAlert('error', 'Add Authorize fail', 'Can not find Employee in PummSoft, Please Try Again.');", true);
+                            ScriptManager.RegisterStartupScript(Page, typeof(System.Web.UI.Page), "Popup", "oAlert('error', 'Add Authorize fail', 'Can not find Employee in PummSoft, Please try again.');", true);
 
                         }
                         else if (oDt.Rows[0]["Result"].ToString() == "2")

@@ -78,7 +78,7 @@
                     <div class="modal-body" id="inputFormFile">
                         <div id="UploadDisplay" style="display: none">
                             <div class="mb-3">
-                                <label class="form-label" for="inpAppFile">Application form (.xlsx) :</label>
+                                <label class="form-label" for="inpAppFile">Application form (.xlsx) : <p style="display:inline; color:red">(สามารถดาวน์โหลดไฟล์ Application form ได้ที่ด้านบนเพจ)</p></label>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="inpFileApp" ErrorMessage="*" ForeColor="#ff0000" ValidationGroup="ProcessUpload" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lbFileApp" runat="server" Text=""></asp:Label>
                                 <div class="input-group">
@@ -87,7 +87,7 @@
 
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="fileInput">SMEs Research :</label>
+                                <label class="form-label" for="fileInput">SMEs Research : <p style="display:inline; color:red">(สามารถดาวน์โหลดไฟล์ SMEs Research ได้ที่ด้านบนเพจ)</p></label>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="inpFileSME" ErrorMessage="*" ForeColor="#ff0000" ValidationGroup="ProcessUpload" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lbFileSME" runat="server" Text=""></asp:Label>
                                 <div class="input-group">
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="fileInput">ภพ.20 :</label>
+                                <label class="form-label" for="fileInput">ภพ.20/ภพ.01/ภพ.09 : <p style="display:inline; color:red">(อายุไม่เกิน 6 เดือน)</p></label>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="inpFilePP20" ErrorMessage="*" ForeColor="#ff0000" ValidationGroup="ProcessUpload" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lbFilePP20" runat="server" Text=""></asp:Label>
                                 <div class="input-group">
@@ -132,7 +132,6 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="fileInput">Organization company :</label>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="inpFileOrgCompany" ErrorMessage="*" ForeColor="#ff0000" ValidationGroup="ProcessUpload" SetFocusOnError="true"></asp:RequiredFieldValidator>
                                 <asp:Label ID="lbFileOrgCompany" runat="server" Text=""></asp:Label>
                                 <div class="input-group">
                                     <input class="form-control" type="file" id="inpFileOrgCompany" runat="server" onchange="checkFile(inpFileOrgCompany)" />
@@ -152,8 +151,14 @@
                         <asp:HiddenField ID="hdfFile" runat="server" />
                         <asp:HiddenField ID="hdfFileUploaded" runat="server" />
                         <asp:HiddenField ID="hdfStatus" runat="server" />
-                        <div class="alert alert-info" id="PreviewFile_Title" style="display: none">
-                            <h3>Preview File</h3>
+                        <div id="PreviewFile_Title" style="display: none">
+                            
+                            <h3><i class="fa-solid fa-copy"></i> Draft File</h3>
+                            <div class="alert alert-warning" style="margin-top: 10px">
+                                <strong><i class="fas fa-exclamation-triangle"></i></strong>
+                                -ไฟล์นี้จะมีอายุภายในสิ้นเดือน ของเดือนนั้นๆ                      
+                                <br />                   
+                            </div>
                         </div>
                         <table id="tbFilePreview" class="table table-hover bg-light" style="width: 100%; display: none">
                             <thead>
@@ -178,27 +183,46 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <!-------------------For Preview file -------------------------------------->
-                        <button class="btn btn-danger" id="btnfnResetProcess" type="button" onclick="resetPreview('P')" style="display:none">Reset</button>
-                        <button class="btn btn-danger" id="btnfnResetRevise" type="button" onclick="resetPreview('R')" style="display:none">Reset</button>
-                        <button class="btn btn-dark" id="btnfnEditFile" onclick="dataTableController('1')" type="button" style="display: none">Edit File</button>
+                        <button class="btn btn-primary" id="btnfnResetProcess" type="button" onclick="resetPreview('P')" style="display:none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-rotate-left"></i></span>
+                            <span class="Text">Reset</span>
+                        </button>
+                        <button class="btn btn-primary" id="btnfnResetRevise" type="button" onclick="resetPreview('R')" style="display:none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-rotate-left"></i></span>
+                            <span class="Text">Reset</span>
+                        </button>
+                        <button class="btn btn-dark" id="btnfnEditFile" onclick="dataTableController('1')" type="button" style="display: none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-pen-to-square"></i></span>
+                            <span class="Text">Edit File</span>
+                        </button>
                         <button class="btn btn-danger" id="btnfnCancelEdit" onclick="dataTableController('1')" type="button" style="display: none">Cancel Edit</button>
 
 
                         <!-------------------For Preview Revise file -------------------------------------->
-                        <button class="btn btn-dark" id="btnfnEditRevise" onclick="dataTableController('2')" type="button" style="display: none">Edit File</button>
+                        <button class="btn btn-dark" id="btnfnEditRevise" onclick="dataTableController('2')" type="button" style="display: none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-pen-to-square"></i></span>
+                            <span class="Text">Edit File</span>
+                        </button>
                         <button class="btn btn-danger" id="btnfnCancelEditRevise" onclick="dataTableController('2')" type="button" style="display: none">Cancel Edit</button>
 
-                        <button class="btn btn-dark" id="btnfnEditPreview" onclick="editPreview()" type="button" style="display: none">Preview</button>
+                        <button class="btn btn-dark" id="btnfnEditPreview" onclick="editPreview()" type="button" style="display: none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <span class="Text">Preview</span>
+                        </button>
                         <button class="btn btn-dark btn-icon-split" type="button" id="btnfnUploadPreview" validationgroup="ProcessUpload" onclick="UploadPreview('ProcessUpload')" style="display: none">
-                            <%--<span class="icon text-white-50" style="margin-right: auto">
-                            <i class="fas fa-check"></i>
-                          </span>--%>
+                            <i class="fa-solid fa-magnifying-glass"></i>
                             <span class="text" style="margin-right: auto">Preview</span>
                         </button>                       
 
-                        <button class="btn btn-success" id="btnfnUploadLocal" type="button" runat="server" onclick="UploadLocal()" style="display: none">Upload</button>
-                        <button class="btn btn-success" id="btnfnUploadRevise" type="button" runat="server" onclick="editPreview()" style="display: none">Upload Revise</button>
-
+                        <button class="btn btn-success" id="btnfnUploadLocal" type="button" runat="server" onclick="UploadLocal()" style="display: none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                            <span class="Text">Upload</span>
+                        </button>
+                        <button class="btn btn-success" id="btnfnUploadRevise" type="button" runat="server" onclick="editPreview()" style="display: none">
+                            <span class="icon text-white-50"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                            <span class="Text">Upload Revise</span>
+                        </button>
+                        <button class="btn btn-dark" id="btnsavePreview" type="submit" runat="server" onserverclick="SavePreview_Click" style="display: none">Save Preview</button>
                         <button class="btn btn-dark" id="btnUploadLocal" type="submit" runat="server" onserverclick="UploadLocal_Click" style="display: none">Move to Local</button>
                        
                     </div>
@@ -291,19 +315,19 @@
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <p>
-                                    Vendor Name :
+                                    <b>Vendor Name :</b>
                                     <asp:Label ID="lbVendorName" runat="server" Text=""></asp:Label>
                                 </p>
                                 <p>
-                                    Vendor PIC :
+                                    <b>Vendor PIC :</b>
                                     <asp:Label ID="lbVendorPIC" runat="server" Text=""></asp:Label>
                                 </p>
                                 <p>
-                                    Email :
+                                    <b>Email :</b>
                                     <asp:Label ID="lbEmail" runat="server" Text=""></asp:Label>
                                 </p>
                                 <p id="UpdateDate">
-                                    Update_Date :
+                                    <b>Update_Date :</b>
                                     <asp:Label ID="lbUpdate_Date" runat="server" Text=""></asp:Label>
                                 </p>
                             </div>
@@ -383,7 +407,10 @@
                                 <i class="fa-solid fa-arrows-rotate fs-1 text-info mb-2"></i>
                                 <h3>On Process</h3>
                                 <p>Please Upload Application file.</p>
-                                <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#uploadFileModal">Upload Files</button>
+                                <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#uploadFileModal">
+                                    <span class="icon text-white-50"><i class="fa-solid fa-arrow-up-from-bracket"></i></span>
+                                    <span class="Text">Upload Files</span>                                    
+                                </button>
                             </div>
                         </div>
                         <%--Revise card--%>
@@ -398,7 +425,10 @@
                                     <asp:Label ID="lbComment" runat="server" Text=""></asp:Label>
                                 </p>
 
-                                <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#uploadFileModal">Edit files</button>
+                                <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#uploadFileModal">
+                                    <span class="icon text-white-50"><i class="fa-solid fa-pen-to-square"></i></span>
+                                    <span class="Text">Edit Files</span>
+                                </button>
                             </div>
                         </div>
                         <%--Reject card--%>
@@ -520,11 +550,11 @@
                 <div class="mb-4">
                     <img src="StartBootstrap/startbootstrap-creative-gh-pages/assets/img/Hino-logo.png" style="width: 150px" />
                 </div>
-                <h4 class="mb-4" style="color: rgb(245, 245, 245);">Hino motors manufacturing (thailand) ltd</h4>
-                <p><i class="fa-solid fa-location-dot"></i>: 99 Moo 3, Teparak Road, Teparak, Muang Samutprakarn 10270</p>
-                <p><i class="fa-solid fa-phone"></i>: 0-2384-2900, Ext 408 (Natchawan), Ext 415 (Nuttanon), Ext 403 (Warinthon)</p>
-                <p><i class="fa-solid fa-fax"></i>: 02-384-0329</p>
-                <p><i class="fa-solid fa-envelope"></i>: Contact@hinothailand.com</p>
+                <h4 class="mb-4" style="color: rgb(245, 245, 245);">Hino Motors Manufacturing (Thailand) Ltd.</h4>
+                <p><i class="fa-solid fa-location-dot"></i> : 99 Moo 3, Teparak Road, Teparak, Muang Samutprakarn 10270</p>
+                <p><i class="fa-solid fa-phone"></i> : 0-2384-2900, Ext 408 (Natchawan), Ext 415 (Nuttanon), Ext 403 (Warinthon)</p>
+                <p><i class="fa-solid fa-fax"></i> : 02-384-0329</p>
+                <p><i class="fa-solid fa-envelope"></i> : Contact@hinothailand.com</p>
                 <%--<a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>--%>
             </div>
         </section>

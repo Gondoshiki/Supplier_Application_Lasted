@@ -7,10 +7,9 @@
     <script src="DateTime/tempus-dominus.js"></script>
     <script src="DateTime/Moment.js"></script>
     <script src="DateTime/Moment_Parse.js"></script>--%>
-<script src="Scripts/ShowLoading.js"></script>
+    <script src="Scripts/ShowLoading.js"></script>
 </asp:Content>
 <asp:Content ID="LogBody" ContentPlaceHolderID="Body" runat="server">
-
     <!----- Loader ------------>
     <div class="loader"></div>
 
@@ -31,16 +30,25 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-1">
-                        <label for="system-name" class="col-form-label">Folder Name:</label>
+                        <div class="alert alert-info">
+                            <p>
+                                <strong><i class="fas fa-exclamation-triangle"></i></strong>
+                                <b>ข้อความในฟิลนี้จะถูกนำไปแสดงบนหน้า Landing Page</b>
+                            </p>
+                            -กรณีที่ต้องการเว้นวรรค ให้ใส่เครื่องหมาย _ แทนการเว้นวรรค                         
+                        
+                        </div>
+                        <label for="system-name" class="col-form-label">Title Name:</label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="FolderName" ErrorMessage="* Please fill in the fields." ForeColor="#ff0000" ValidationGroup="upload" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                        <input type="Text" class="form-control" id="FolderName" placeholder="Please fill folder name" runat="server" />
-                        <asp:RegularExpressionValidator display="Dynamic" ValidationGroup="upload" ID="RegularExpressionFolderName" runat="server" ControlToValidate="FolderName" ErrorMessage=" Enter only a-z ก-ฮ ๐-๙ A- Z 0-9 . _ # ห้ามเว้นวรรค" ValidationExpression="^[a-zA-Z0-9ก-๙,.#_]*$" Font-Bold="true" ForeColor="Red"> </asp:RegularExpressionValidator>
+                        <input type="Text" class="form-control" id="FolderName" placeholder="Please fill title name" runat="server" />
+                        <asp:RegularExpressionValidator Display="Dynamic" ValidationGroup="upload" ID="RegularExpressionFolderName" runat="server" ControlToValidate="FolderName" ErrorMessage=" Enter only a-z A-Z 0-9 _ ห้ามเว้นวรรค" ValidationExpression="^[a-zA-Z0-9ก-๙,_]*$" Font-Bold="true" ForeColor="Red"> </asp:RegularExpressionValidator>
+                        
                     </div>
                     <div class="mb-3">
                         <label for="system-name" class="col-form-label">File:</label>
                         <asp:RequiredFieldValidator ID="FileUpload_Validate" runat="server" ControlToValidate="fileUpload" ErrorMessage="* Please fill in the fields." ForeColor="#ff0000" ValidationGroup="upload" SetFocusOnError="true"></asp:RequiredFieldValidator>
                         <div class="input-group">
-                            <input type="file" class="form-control" id="fileUpload" runat="server">
+                            <input type="file" class="form-control" onchange="checkFile(Body_fileUpload)" id="fileUpload" runat="server">
                         </div>
                     </div>
                 </div>
@@ -48,7 +56,7 @@
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     <button class="btn btn-primary btn-icon-split" type="button" validationgroup="upload" onclick="PS_UploadClick('upload')">
                         <span class="text" style="margin-right: auto">Upload</span></button>
-                    <button class="btn btn-dark" id="btnAddSystem" type="submit" runat="server"  validationGroup="upload" onserverclick="UploadFile_Click" style="display: none">Upload</button>
+                    <button class="btn btn-dark" id="btnAddSystem" type="submit" runat="server" validationgroup="upload" onserverclick="UploadFile_Click" style="display: none">Upload</button>
                 </div>
             </div>
         </div>
@@ -63,16 +71,24 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-1">
-                        <label for="system-name" class="col-form-label">Folder Name:</label>
+                        <label for="system-name" class="col-form-label">Title Name:</label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="inpEditfolder" ErrorMessage="* Please fill in the fields." ForeColor="#ff0000" ValidationGroup="edit" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                        <input type="Text" class="form-control" id="inpEditfolder" placeholder="Please fill folder name" runat="server">
-                        <asp:RegularExpressionValidator ValidationGroup="edit" ID="RegularExpressionValidator1" runat="server" ControlToValidate="inpEditfolder" ErrorMessage="*Enter only a-z   A- Z  0-9   .#. NO Space bar" ValidationExpression="^[a-zA-Z0-9,.#_]*$" Font-Bold="true" ForeColor="Red"> </asp:RegularExpressionValidator>
+                        <input type="Text" class="form-control" id="inpEditfolder" placeholder="Please fill title name" runat="server">
+                        <asp:RegularExpressionValidator ValidationGroup="edit" ID="RegularExpressionValidator1" runat="server" ControlToValidate="inpEditfolder" ErrorMessage="*Enter only a-z A-Z 0-9 _ NO Space bar" ValidationExpression="^[a-zA-Z0-9,_]*$" Font-Bold="true" ForeColor="Red"> </asp:RegularExpressionValidator>
+                        <div class="alert alert-info">
+                            <p>
+                                <strong><i class="fas fa-exclamation-triangle"></i></strong>
+                                <b>ข้อความในฟิลนี้จะถูกนำไปแสดงบนหน้า Landing Page</b>
+                            </p>
+                            -กรณีที่ต้องการเว้นวรรค ให้ใส่เครื่องหมาย _ แทนการเว้นวรรค                         
+                        <br />
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="system-name" class="col-form-label">File:</label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="inpEditfile" ErrorMessage="* Please fill in the fields." ForeColor="#ff0000" ValidationGroup="edit" SetFocusOnError="true"></asp:RequiredFieldValidator>
                         <div class="input-group">
-                            <input type="file" class="form-control" id="inpEditfile" runat="server" onchange="checkFile('inpEditfile')">
+                            <input type="file" class="form-control" id="inpEditfile" runat="server" onchange="checkFile(Body_inpEditfile)">
                         </div>
                     </div>
                 </div>
@@ -80,7 +96,7 @@
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     <button class="btn btn-primary btn-icon-split" type="button" validationgroup="edit" onclick="editFile('edit')">
                         <span class="text" style="margin-right: auto">Edit</span></button>
-                    <button class="btn btn-dark" id="btnEditfile" type="submit" runat="server" validationGroup="edit" onserverclick="EditFile_Click" style="display: none">Upload</button>
+                    <button class="btn btn-dark" id="btnEditfile" type="submit" runat="server" validationgroup="edit" onserverclick="EditFile_Click" style="display: none">Upload</button>
                 </div>
             </div>
         </div>
@@ -98,18 +114,26 @@
                     <div class="mb-3">
                         <label for="system-name" class="col-form-label">Employee ID :</label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="EmployeeID" ErrorMessage="* please fill in the fields." ForeColor="#ff0000" ValidationGroup="Authorize" SetFocusOnError="true"></asp:RequiredFieldValidator>
-                        <input type="number" class="form-control" id="EmployeeID" runat="server" data-maxlength="8" oninput="this.value=this.value.slice(0,this.dataset.maxlength)" placeholder="Employee ID" pattern="[0-9]">
+                        <input type="number" class="form-control" id="EmployeeID" runat="server" data-maxlength="8" oninput="this.value=this.value.slice(0,this.dataset.maxlength)" placeholder="0-8 Digits" pattern="[0-9]">
                     </div>
                     <div class="mb-3">
                         <label for="system-name" class="col-form-label">Phone :</label>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="Phone" ErrorMessage="* please fill in the fields." ForeColor="#ff0000" ValidationGroup="Authorize" SetFocusOnError="true"></asp:RequiredFieldValidator>
                         <input type="number" class="form-control" id="Phone" runat="server" data-maxlength="10" oninput="this.value=this.value.slice(0,this.dataset.maxlength)" placeholder="0-10 Digits" pattern="[0-9]">
+                        <div class="alert alert-info" style="margin-top: 10px">
+                            
+                                <strong><i class="fas fa-exclamation-triangle"></i></strong>
+                                <b>-แนะนำให้ใส่เบอร์โต๊ะที่ทำงาน</b>
+                            
+                           <%-- -กรณีที่ต้องการเว้นวรรค ให้ใส่เครื่องหมาย _ แทนการเว้นวรรค--%>                         
+                        <%--<br />--%>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     <button id="btnAuth" class="btn btn-success" validationgroup="Authorize" type="button" runat="server" onclick="return Auth('Authorize');"><b>Confirm</b></button>
-                    <button id="btn_Auth" class="btn btn-success" type="submit" runat="server" style="display: none" validationGroup="Authorize" onserverclick="Auth_Click"><b>Auth</b></button>
+                    <button id="btn_Auth" class="btn btn-success" type="submit" runat="server" style="display: none" validationgroup="Authorize" onserverclick="Auth_Click"><b>Auth</b></button>
                 </div>
             </div>
         </div>
@@ -169,7 +193,7 @@
                     <table class="table table-hover border" id="Filetable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Folder_Name.</th>
+                                <th>Title</th>
                                 <th>File_Name</th>
                                 <th></th>
                                 <th></th>
@@ -180,11 +204,8 @@
                 </div>
             </div>
         </div>
-        <script src="Model/FileTable.js">
-        </script>
-    
-        <%--       <script src="Model/FileTable.js"></script>--%>
 
+        <%--       <script src="Model/FileTable.js"></script>--%>
         <div class="card shadow mb-4 border-left-secondary">
             <div class="card-header">
                 <h5 class="font-weight-bold"><i class="bi bi-shield-lock"></i>Authorization</h5>
@@ -213,8 +234,9 @@
                 </div>
             </div>
         </div>
-        <script src="Model/UserTable.js"></script>
     </div>
+    <script src="Model/FileTable.js"></script>
+    <script src="Model/UserTable.js"></script>
     <script src="Scripts/PS/Config/Alert_Config.js"></script>
     <script src="Scripts/PS/Config/POST_Config.js"></script>
 </asp:Content>

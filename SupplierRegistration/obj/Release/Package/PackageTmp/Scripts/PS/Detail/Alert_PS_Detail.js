@@ -1,4 +1,5 @@
 ﻿function checkFile(fileupload) {
+    console.log(fileupload.val);
     var fileEditApp = null;
     switch (fileupload) {
         case 'File1':

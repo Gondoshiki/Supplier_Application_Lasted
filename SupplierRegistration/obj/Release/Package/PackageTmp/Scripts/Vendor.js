@@ -1,5 +1,9 @@
 ﻿$(document).ready(function () {
 
+    $('#btnsavePreview').on("click", function (e) {
+        e.preventDefault();
+    })
+
     //Get App Detail
     $('#inpFileApp').on("change", function (event) {
     })
@@ -21,150 +25,7 @@
                 lbBtnDownload.innerHTML = server;
             }
         }
-    });
-
-    //function fnGetFileRevise(value) {
-    //    $.ajax({
-    //        method: "POST",
-    //        url: "Service.asmx/GetFileRevise",
-    //        data: { ID: value },
-    //        dataType: "json",
-    //        success: function (result) {
-    //            if (result.length > 0) {
-    //                $('#tbFileRevise').show();
-    //                $('#tbFileRevise').DataTable({
-    //                    searching: false,
-    //                    paging: false,
-    //                    info: false,
-    //                    responsive: true,
-    //                    autoWidth: false,
-    //                    data: result,
-    //                    //"drawCallback": function () {
-    //                    //    $("#tbFile thead").remove();
-    //                    //},
-    //                    //"bDestroy": true,                    
-    //                    columns: [
-    //                        { data: 'Title' },
-    //                        { data: 'Source' },
-    //                        { data: 'Source1' }
-
-    //                    ],
-    //                    //"columnDefs": [
-    //                    //    { "targets": [0], "class": "justify-content-center" },                       
-
-    //                    //],
-    //                });
-
-    //                $('#btnfnEditPreview').show();
-    //                //$('#btnfnUploadProcess').show();
-
-    //            }
-    //            else {
-    //                $('#UploadDisplay').show();
-    //                $('#btnfnUploadPreview').show();
-    //            }
-    //        }
-    //    });
-    //}
-    //function fnGetFilePreview(value) {
-    //    $.ajax({
-    //        method: "POST",
-    //        url: "Service.asmx/GetFilePreview",
-    //        data: { ID: value },
-    //        dataType: "json",
-    //        /*contentType: "application/json; charset=utf-8",*/
-    //        success: function (response) {
-    //            if (response.length > 0) {
-    //                $('#tbFilePreview').dataTable().fnClearTable();
-    //                $('#tbFilePreview').dataTable({
-    //                    searching: false,
-    //                    paging: false,
-    //                    info: false,
-    //                    responsive: true,
-    //                    autoWidth: false,
-    //                    data: server,
-    //                    //"drawCallback": function () {
-    //                    //    $("#tbFile thead").remove();
-    //                    //},
-    //                    "bDestroy": true,
-    //                    columns: [
-    //                        { data: 'Title' },
-    //                        { data: 'Source' },
-    //                        { data: 'Source1', visible: false }
-
-    //                    ],
-    //                });
-    //                $('#tbFilePreview').show();
-    //                $('#tbFileRevise').hide();
-    //                $('#btnfnEditPreview').hide();
-    //                $('#btnfnCancelEdit').hide();
-    //                $('#btnfnEditFile').show();
-    //                $('#btnfnUploadLocal').show();
-    //            }
-    //            else {
-    //                $('#UploadDisplay').show();
-    //                $('#btnfnUploadPreview').show();
-    //            }
-
-    //        }
-    //    });
-    //    //$.ajax({
-    //    //    method: "POST",
-    //    //    url: "Service.asmx/GetFilePreview",
-    //    //    data: { ID: value },
-    //    //    dataType: "json",
-    //    //    success: function (result) {
-    //    //        if (result.length > 0) {
-    //    //            $('#tbFilePreview').show();
-    //    //            $('#tbFilePreview').DataTable({
-    //    //                searching: false,
-    //    //                paging: false,
-    //    //                info: false,
-    //    //                responsive: true,
-    //    //                autoWidth: false,
-    //    //                data: result,
-    //    //                //"drawCallback": function () {
-    //    //                //    $("#tbFile thead").remove();
-    //    //                //},
-    //    //                "bDestroy": true,
-    //    //                columns: [
-    //    //                    { data: 'Title' },
-    //    //                    { data: 'Source' },
-    //    //                    { data: 'Source1', visible: false }
-
-    //    //                ],
-    //    //                //"columnDefs": [
-    //    //                //    { "targets": [0], "class": "justify-content-center" },                       
-
-    //    //                //],
-    //    //            });
-
-    //    //            $('#btnfnEditFile').show();
-    //    //            //$('#btnfnUploadProcess').show();
-    //    //            //$('#btnfnUploadLocal').show();
-
-    //    //            //var reader = new FileReader();
-    //    //            //var fileApp = document.getElementById("inpFileApp");
-    //    //            //const file = document.querySelector("input[type=file]").files[0];
-    //    //            //result.forEach((data) => {
-    //    //            //    if (data.FileName.length == 12) {
-    //    //            //        fileApp.Value = "http://localhost:56377/Document/fileAttach/temp/A202308-0043/Application_Form/Inv%20&%20PL.pdf"
-    //    //            //    }
-
-    //    //            //    reader.readAsDataURL("http://localhost:56377/Document/fileAttach/temp/A202308-0043/Application_Form/Inv%20&%20PL.pdf");
-    //    //            //    reader.onload = function (e) {
-    //    //            //        fileupload.src = e.target.result;
-    //    //            //        /*lbFileApp.innerHTML = "<a href='" + encodeURI(e.target.result) + "' target='_blank'>" + fileupload.files[i].name + "</a>";*/
-    //    //            //    }
-    //    //            //})
-    //    //        }
-    //    //        else {
-    //    //            $('#UploadDisplay').show();
-    //    //            $('#btnfnUploadPreview').show();
-    //    //        }
-    //    //    }
-    //    //});
-    //}
+    });    
     //Get Application Detail for show
     $.ajax({
         method: "POST",
@@ -218,7 +79,60 @@
                                 var dt = JSON.parse(JSON.stringify(server))
                                 if (server.length > 0) {
                                     if (value.Status == "R") {
-                                        fnGetFileRevise(id);                                        
+                                        $.ajax({
+                                            method: "POST",
+                                            url: "Service.asmx/GetFilePreview",
+                                            data: { ID: id },
+                                            dataType: "json",
+                                            /*contentType: "application/json; charset=utf-8",*/
+                                            success: function (response) {
+                                                if (response.length > 0) {
+                                                    $('#tbFilePreview').dataTable({
+                                                        order: [],
+                                                        searching: false,
+                                                        paging: false,
+                                                        info: false,
+                                                        responsive: true,
+                                                        autoWidth: false,
+                                                        data: response,
+                                                        //"drawCallback": function () {
+                                                        //    $("#tbFile thead").remove();
+                                                        //},
+                                                        "bDestroy": true,
+                                                        columns: [
+                                                            { data: 'Title' },
+                                                            { data: 'Source' },
+                                                            { data: 'Source1', visible: false }
+
+                                                        ],
+                                                        "columnDefs": [
+                                                            { autoWidth: false, "targets": [2] },
+
+                                                        ],
+                                                    });
+                                                    $('#tbFilePreview').fadeIn(2000);
+                                                    $('#PreviewFile_Title').fadeIn(2000);
+                                                    $('#btnfnEditFile').show();
+                                                    $('#btnfnUploadLocal').show();
+                                                    //========== Hide tb File Revise =======================
+                                                    $('#tbFileRevise').hide();
+                                                    $('#btnfnEditPreview').hide();
+                                                    $('#btnfnCancelEdit').hide();
+                                                    //========== Hide Upload Display=========================
+                                                    $('#UploadDisplay').hide();
+                                                    $('#btnfnUploadPreview').hide();
+                                                    if ($('#hdfStatus').val() == "P") {
+                                                        $('#btnfnResetProcess').show();
+                                                    }
+                                                    else if ($('#hdfStatus').val() == "R") {
+                                                        $('#btnfnResetRevise').show();
+                                                    }
+                                                }
+                                                else {
+                                                    fnGetFileRevise(id);
+                                                }
+                                            }
+                                        });
                                     }
                                     if (value.Status == "F") {
 

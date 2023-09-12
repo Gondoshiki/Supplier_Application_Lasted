@@ -1,4 +1,5 @@
-﻿function fnGetFileRevise(value) {
+﻿
+function fnGetFileRevise(value) {
     $.ajax({
         method: "POST",
         url: "Service.asmx/GetFileRevise",
@@ -17,7 +18,7 @@
                     //"drawCallback": function () {
                     //    $("#tbFile thead").remove();
                     //},
-                    //"bDestroy": true,                    
+                    "bDestroy": true,                    
                     columns: [
                         { data: 'Title' },
                         { data: 'Source' },
@@ -33,10 +34,11 @@
                 $('#btnfnEditPreview').show();
 
                 //========== Hide tb file Preview =======================
-                $('#tbFilePreview').fadeOut(2000);
-                $('#PreviewFile_Title').fadeOut(2000);
+                $('#tbFilePreview').fadeOut(500);
+                $('#PreviewFile_Title').fadeOut(500);
                 $('#btnfnEditFile').hide();
                 $('#btnfnUploadLocal').hide();
+                $('#btnfnResetRevise').hide();
                 //========== Hide Upload Display=========================
                 $('#UploadDisplay').hide();
                 $('#btnfnUploadPreview').hide();
@@ -152,8 +154,9 @@ function UploadPreview(valid) {
         //for (var i = 0; i < pageData.length; i) {
         //    idList.push(pageData[i][0]);
         //}
+
         var form_data = new FormData();
-        var appID = $('#hdfApp_ID').val();
+        var appID = $('#hdfApp_ID').val();       
         var fileApp = $('#inpFileApp')[0].files[0];
         var fileSME = $('#inpFileSME')[0].files[0];
         var fileRegisCert = $('#inpFileRegisCert')[0].files[0];
@@ -166,57 +169,75 @@ function UploadPreview(valid) {
         //    formData.append(key, value);
         //});
         form_data.append("id", appID);
-        form_data.append("fileApp", fileApp);
-        form_data.append("fileSME", fileSME);
-        form_data.append("fileRegisCert", fileRegisCert);
-        form_data.append("filePP20", filePP20);
-        form_data.append("fileBookBank", fileBookBank);
-        form_data.append("fileBOJ5", fileBOJ5);
-        form_data.append("fileOrgCompany", fileOrgCompany);
-        form_data.append("fileSPS10", fileSPS10);
-        showloading("1");
+        form_data.append("fileApp_temp", fileApp);
+        form_data.append("fileSME_temp", fileSME);
+        form_data.append("fileRegisCert_temp", fileRegisCert);
+        form_data.append("filePP20_temp", filePP20);
+        form_data.append("fileBookBank_temp", fileBookBank);
+        form_data.append("fileBOJ5_temp", fileBOJ5);
+        form_data.append("fileOrgCompany_temp", fileOrgCompany);
+        form_data.append("fileSPS10_temp", fileSPS10);
+        showloading('1');
         $.ajax({
             method: "POST",
-            url: "Service.asmx/SaveToPreview",
+            url: "Service.asmx/EditPreview",
             processData: false,
             contentType: false,
             cache: false,
             data: form_data,
             dataType: "json",
             enctype: 'multipart/form-data',
-            /*enctype: 'multipart/form-data',*/
             /*contentType: "application/json; charset=utf-8",*/
             success: function (result) {
+                showloading('0');
                 if (result == "success") {
                     let searchParams = new URLSearchParams(window.location.search);
                     var id = searchParams.get('id');
                     fnGetFilePreview(id);
-
-                    $('#UploadDisplay').hide();
-                    $('#btnfnUploadPreview').hide();
+                    //var table = $('#tbFilePreview').DataTable({
+                    //    "ajax": {
+                    //        "url": "Service.asmx/GetFilePreview",
+                    //        "type": "POST",
+                    //        "data": { ID: id },
+                    //        "bDestroy": true,
+                    //    }                                    
+                    //});
+                    //table.ajax.reload();
                 }
-                else if (result == "fail") {
-                    oFileUploaded('error', 'Upload Fail', 'No file uploaded or not found ID', '');
+                if (result == "fail") {
+                    oFileUploaded('error', 'Upload fail', 'Please, upload file.', '');
                 }
-                showloading("0");
             }
 
-        });
-
-        //var fileApp = document.getElementById("inpFileApp");                    
+        })
+        //var fileApp = document.getElementById("inpFileApp");
+        //var fileSme = document.getElementById("inpFileSME");
         //var fileRegisCert = document.getElementById("inpFileRegisCert");
         //var filePP20 = document.getElementById("inpFilePP20");
         //var fileBookBank = document.getElementById("inpFileBookBank");
         //var fileBOJ5 = document.getElementById("inpFileBOJ5");
         //var fileOrgCompany = document.getElementById("inpFileOrgCompany");
         //var fileSPS10 = document.getElementById("inpFileSPS10");
-        //var countFiles = fileApp.files.length + fileRegisCert.files.length + filePP20.files.length + fileBookBank.files.length + fileBOJ5.files.length + fileOrgCompany.files.length + fileSPS10.files.length
+        //var countFiles = fileApp.files.length + fileSme.files.length + fileRegisCert.files.length + filePP20.files.length + fileBookBank.files.length + fileBOJ5.files.length + fileOrgCompany.files.length + fileSPS10.files.length
         //$('#hdfFile').val(countFiles);
         //var appID = $('#hdfApp_ID').val()
-        //if (countFiles == 6 || countFiles == 7) {
+        //if (countFiles == 7 || countFiles == 8) {
+        //    swal.fire({
+        //        icon: 'question',
+        //        title: 'Do you want to Preview ?',
+        //        text: '',
+        //        showCancelButton: true,
+        //        confirmButtonColor: '#3085d6',
+        //        cancelButtonColor: '#d33',
+        //        confirmButtonText: 'Yes',
+        //        cancelButtonText: 'No'
+        //    }).then(function (result) {
+        //        if (result.value) {
+        //            showloading('1');
+        //            $("#btnsavePreview").click();
 
-        //    $("#btnSavePreview").click();
-        //    showloading();
+        //        }
+        //    });
         //}
         //else {
         //    swal.fire({
@@ -226,6 +247,8 @@ function UploadPreview(valid) {
         //        timer: 5000
         //    })
         //}
+
+        
 
     }
 }
@@ -378,17 +401,22 @@ function resetPreview(value) {
                             //$('#tbFilePreview').fadeToggle(2000);
                         }
                         else if (value == "R") {
-                            $('#tbFileRevise').show();
-                            $('#btnfnEditPreview').show();
+                            console.log("Revise");
+                            var id = null;
+                            let searchParams = new URLSearchParams(window.location.search);                            
+                            var id = searchParams.get('id');
+                            fnGetFileRevise(id);
+                            //$('#tbFileRevise').show();
+                            //$('#btnfnEditPreview').show();
 
-                            //========== Hide tb file Preview =======================
-                            $('#tbFilePreview').fadeOut(2000)
-                            $('#PreviewFile_Title').fadeOut(2000);
-                            $('#btnfnEditFile').hide();
-                            $('#btnfnUploadLocal').hide();
-                            //========== Hide Upload Display=========================
-                            $('#UploadDisplay').hide();
-                            $('#btnfnUploadPreview').hide();
+                            ////========== Hide tb file Preview =======================
+                            //$('#tbFilePreview').fadeOut(2000)
+                            //$('#PreviewFile_Title').fadeOut(2000);
+                            //$('#btnfnEditFile').hide();
+                            //$('#btnfnUploadLocal').hide();
+                            ////========== Hide Upload Display=========================
+                            //$('#UploadDisplay').hide();
+                            //$('#btnfnUploadPreview').hide();
 
                         }
 

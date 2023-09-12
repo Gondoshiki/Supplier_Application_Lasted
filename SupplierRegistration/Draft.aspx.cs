@@ -1044,7 +1044,7 @@ namespace SupplierRegistration
                 }
                 string MailTo = emailTo.Replace(",", ";");
 
-                foreach (var email in MailTo.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries))
+                foreach (var email in MailTo.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries))
                 {
 
                     myMail.To.Add(new MailAddress(email.Trim()));

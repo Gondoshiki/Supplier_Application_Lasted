@@ -50,7 +50,7 @@ namespace SupplierRegistration
         public static bool CheckVendorName(string picName)
         {
 
-            string pattern = @"^[a-z0-9A-Zก-๏._\s\s]+$";
+            string pattern = @"^[a-z0-9A-Zก-๏._()\s\s]+$";
             if (Regex.IsMatch(picName, pattern))
             {
                 return true;
@@ -263,7 +263,7 @@ namespace SupplierRegistration
             string VendorName = Vendor_Name.Value;
             string PIC = Vendor_PIC.Value;
             string Mail = Email.Value.Trim();
-            string GmMail = GM_Email.Value.Trim();
+            string GmMail = null;
             string[] arrMail = Mail.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             string[] checkMailFormat = null;
             string[] arrGmMail = Mail.Split(' ');
@@ -275,7 +275,17 @@ namespace SupplierRegistration
             string monthstamp = DateTime.Now.ToString("MM");
             string runningNo = null;
             string CC = null;
-            bool boolGmMail = CheckEmailFormat(GmMail.Trim());
+            string[] ccMail = null;
+            bool boolGmMail = false;
+            string GM = GM_Email.Value.Trim();
+            ccMail = GM.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string oCCMail in ccMail)
+            {
+                boolGmMail = CheckEmailFormat(oCCMail.Trim());
+                GmMail += oCCMail.Trim() + ";";
+            }
+            
+            //bool boolGmMail = CheckEmailFormat(GmMail.Trim());
             bool boolMail = false; //check for set new email format
             bool boolCheckMail = true; //for check email format
 
@@ -457,7 +467,7 @@ namespace SupplierRegistration
                 if (boolCheckMail == true && boolGmMail == true && boolCheckName == true && boolCheckVendor == true)
                 {
                     //Set GM_Email format
-                    CC = GmMail + "; " + logonEmail + ";";
+                    CC += GmMail + logonEmail + ";";
                     //Create IncidentNo
                     sql.Append("spCreateAPP_ID");
                     sqlcmd = new SqlCommand(sql.ToString(), conn);
@@ -566,7 +576,16 @@ namespace SupplierRegistration
             string monthstamp = DateTime.Now.ToString("MM");
             string runningNo = null;
             string CC = null;
-            bool boolGmMail = CheckEmailFormat(GmMail.Trim());
+
+            string[] ccMail = null;
+            bool boolGMCheck = false;
+            string GM = GM_Email.Value.Trim();
+            ccMail = GM.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string oCCMail in ccMail)
+            {
+                boolGMCheck = CheckEmailFormat(oCCMail.Trim());
+            }
+            
             bool boolMail = false;
             bool boolCheckMail = true;
 
@@ -769,7 +788,7 @@ namespace SupplierRegistration
             }
             if (GmMail != "")
             {
-                if (boolGmMail == false)
+                if (boolGMCheck == false)
                 {
                     ScriptManager.RegisterStartupScript(Page, typeof(System.Web.UI.Page), "Popup", "oAlert('error', 'Fail', 'CC Email is not correct, Please try again.');", true);
                     

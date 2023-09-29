@@ -243,8 +243,17 @@ namespace SupplierRegistration
                                 string[] words = null;
                                 string oMail = null;
                                 string[] checkMailFormat = null;
+                                string[] ccMail = null;
+                                bool boolGMCheck = false;
+                                string gmMail = null;
                                 string GM = GM_Email.Value.Trim();
-                                bool boolGMCheck = CheckEmailFormat(GM.Trim());
+                                ccMail = GM.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                                foreach (string oCCMail in ccMail)
+                                {
+                                    boolGMCheck = CheckEmailFormat(oCCMail.Trim());
+                                    gmMail += oCCMail.Trim() + ";";
+                                }
+                                
                                 bool boolMail = false;
                                 bool boolCheckMail = true;
                                 words = Mail.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
@@ -321,7 +330,7 @@ namespace SupplierRegistration
                                         var Timestamp = DateTime.Now.ToString("dd MMM yyyy HH:mm");
                                         string Detail2 = "Form has been sent email to " + VendorName;
                                         string Status = "P";
-                                        CC = GM + "; " + logonEmail + ";";
+                                        CC = gmMail + logonEmail + ";";
                                         //Add ค่าใส่ colunm Attributes.Database <-- Front
                                         sqlcmd = new SqlCommand("spUpdateAppDetail", conn);
                                         sqlcmd.Parameters.AddWithValue("ID", AppID);
@@ -332,7 +341,7 @@ namespace SupplierRegistration
                                         sqlcmd.Parameters.AddWithValue("Timestamp", Timestamp);
                                         sqlcmd.Parameters.AddWithValue("Detail2", Detail2);
                                         sqlcmd.Parameters.AddWithValue("CreateID", CreateBy);
-                                        sqlcmd.Parameters.AddWithValue("GMail", GM);
+                                        sqlcmd.Parameters.AddWithValue("GMail", gmMail);
                                         sqlcmd.CommandType = CommandType.StoredProcedure;
                                         oDr = sqlcmd.ExecuteReader();
                                         while (oDr.Read())
@@ -592,8 +601,15 @@ namespace SupplierRegistration
                             string[] words = null;
                             string oMail = null;
                             string[] checkMailFormat = null;
+                            string[] ccMail = null;
+                            bool boolGMCheck = false;
                             string GM = GM_Email.Value.Trim();
-                            bool boolGMCheck = CheckEmailFormat(GM.Trim());
+                            ccMail = GM.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+                            foreach(string oCCMail in ccMail)
+                            {
+                                boolGMCheck = CheckEmailFormat(oCCMail.Trim());
+                            }
+                            //bool boolGMCheck = CheckEmailFormat(GM.Trim());
                             bool boolMail = false;
                             bool boolCheckMail = true;
                             string lastarremail = null;
@@ -1089,7 +1105,7 @@ namespace SupplierRegistration
         public static bool CheckVendorName(string picName)
         {
 
-            string pattern = @"^[a-z0-9A-Zก-๏._\s\s]+$";
+            string pattern = @"^[a-z0-9A-Zก-๏._()\s\s]+$";
             if (Regex.IsMatch(picName, pattern))
             {
                 return true;
